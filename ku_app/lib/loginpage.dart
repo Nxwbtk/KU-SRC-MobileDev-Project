@@ -13,51 +13,70 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Image(
-              image: AssetImage('lib/assets/imgs/KU_SubLogo.png'),
-              width: 300,
-              height: 300,
-            ),
-            SizedBox(
-              width: 200,
-              height: 75,
-              child: TextFormField(
-                maxLength: 50,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Email',
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Image(
+                  image: AssetImage('lib/assets/imgs/KU_SubLogo.png'),
+                  width: 300,
+                  height: 300,
                 ),
-                controller: emailController,
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              width: 200,
-              height: 75,
-              child: TextFormField(
-                maxLength: 50,
-                obscureText: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: TextFormField(
+                    maxLength: 50,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Email',
+                        counter: SizedBox(
+                          height: 0,
+                          width: 0,
+                        )),
+                    controller: emailController,
+                  ),
                 ),
-                controller: passwordController,
-              ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: TextFormField(
+                    maxLength: 50,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Password',
+                        counter: SizedBox(
+                          height: 0,
+                          width: 0,
+                        )),
+                    controller: passwordController,
+                  ),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Container(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Sign In',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green[900],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5.0),
+                          )),
+                    ),
+                  ),
+                )
+              ],
             ),
-            SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Login'),
-            )
-          ],
+          ),
         ),
       ),
     );
