@@ -1,19 +1,19 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class StdHomePage extends StatefulWidget {
+  const StdHomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<StdHomePage> createState() => _StdHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _StdHomePageState extends State<StdHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('KU App'),
+          title: const Text('Nisit KU'),
           backgroundColor: Colors.grey[100],
         ),
         endDrawer: Drawer(
@@ -43,7 +43,6 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ],
-
             ),
           ),
         ),

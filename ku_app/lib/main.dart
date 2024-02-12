@@ -23,7 +23,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CheckSignInPage(),
+      home: FutureBuilder(
+        future: Firebase.initializeApp(
+            options: DefaultFirebaseOptions.currentPlatform
+        ),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return const CheckSignInPage();
+          }
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        },
+      ),
     );
   }
 }
