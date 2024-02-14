@@ -5,7 +5,7 @@ import 'package:ku_app/admin/adminhomepage.dart';
 import 'package:ku_app/student/stdhomepage.dart';
 
 class CheckRolePage extends StatelessWidget {
-  final String role = 'student';
+  final String role = 'admin';
 
   const CheckRolePage({super.key});
 

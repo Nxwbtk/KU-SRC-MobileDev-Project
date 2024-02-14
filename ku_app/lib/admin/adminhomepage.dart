@@ -11,15 +11,14 @@ class AdminHomePage extends StatefulWidget {
 
 class _AdminHomePageState extends State<AdminHomePage> {
   final String role = 'admin';
-
+  int selectedIndex = 0;
   final screen = [
     const AdminMainPage(),
-    AdminAccountPage()
+    const AdminAccountPage()
   ];
 
   @override
   Widget build(BuildContext context) {
-    int selectedIndex = 0;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Nisit KU V.2 admin'),

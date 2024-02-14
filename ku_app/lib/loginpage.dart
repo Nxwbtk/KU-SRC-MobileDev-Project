@@ -71,9 +71,15 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () async {
+                        showDialog(context: context, builder: (context) {
+                          return const Center(
+                            child: CircularProgressIndicator(),
+                          );
+                        });
                         await FirebaseAuth.instance.signInWithEmailAndPassword(
                             email: emailController.text.trim(),
                             password: passwordController.text.trim());
+                        Navigator.pop(context);
                       },
                       child: const Text(
                         'Sign In',
