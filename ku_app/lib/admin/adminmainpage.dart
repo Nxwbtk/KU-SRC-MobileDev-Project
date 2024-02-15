@@ -21,7 +21,10 @@ class _AdminMainPageState extends State<AdminMainPage> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminRegisterAccount()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AdminRegisterAccount()));
                 },
                 child: Card(
                   child: Container(
@@ -58,9 +61,6 @@ class _AdminMainPageState extends State<AdminMainPage> {
               ),
             ],
           ),
-          ElevatedButton(onPressed: () {
-            FirebaseAuth.instance.signOut();
-          }, child: const Text('ออกจากระบบ'))
         ],
       ),
     );

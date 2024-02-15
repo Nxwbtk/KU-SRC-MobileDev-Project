@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                     maxLength: 50,
                     decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: 'Email',
+                        hintText: 'อีเมล',
                         counter: SizedBox(
                           height: 0,
                           width: 0,
@@ -54,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                     decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: 'Password',
+                        hintText: 'รหัสผ่าน',
                         counter: SizedBox(
                           height: 0,
                           width: 0,
@@ -71,18 +71,20 @@ class _LoginPageState extends State<LoginPage> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () async {
-                        showDialog(context: context, builder: (context) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        });
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return const Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            });
                         await FirebaseAuth.instance.signInWithEmailAndPassword(
                             email: emailController.text.trim(),
                             password: passwordController.text.trim());
                         Navigator.pop(context);
                       },
                       child: const Text(
-                        'Sign In',
+                        'เข้าสู่ระบบ',
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ElevatedButton.styleFrom(
