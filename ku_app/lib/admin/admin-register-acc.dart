@@ -1,4 +1,5 @@
 import 'package:awesome_select/awesome_select.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,8 @@ class AdminRegisterAccount extends StatefulWidget {
 }
 
 class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
+  CollectionReference usersCollection =
+      FirebaseFirestore.instance.collection('users_collection');
   final firstNameController = TextEditingController();
   final lastNameController = TextEditingController();
   final majorController = TextEditingController();
@@ -166,17 +169,81 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () async {
-                      showDialog(context: context, builder: (context) {
-                        return Center(child: CircularProgressIndicator());
-                      });
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Center(child: CircularProgressIndicator());
+                          });
                       try {
-                        if (passwordController.text != confirmPasswordController.text) {
+                        if (passwordController.text !=
+                            confirmPasswordController.text) {
                           Navigator.pop(context);
-                          await showDialog(context: context, builder: (context) {
-                            return Center(
-                              child: AlertDialog(
-                                title: const Text("รหัสผ่านไม่ตรงกัน"),
-                                content: const Text("กรุณากรอกรหัสผ่านใหม่อีกครั้ง"),
+                          await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return Center(
+                                  child: AlertDialog(
+                                    title: const Text("รหัสผ่านไม่ตรงกัน"),
+                                    content: const Text(
+                                        "กรุณากรอกรหัสผ่านใหม่อีกครั้ง"),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: const Text("ตกลง"),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                        } else {
+                          Navigator.pop(context);
+
+                          await FirebaseAuth.instance
+                              .createUserWithEmailAndPassword(
+                                  email: emailController.text,
+                                  password: passwordController.text)
+                              .then((_) async {
+                            await usersCollection
+                                .doc(emailController.text)
+                                .set({
+                              'email': emailController.text,
+                              'first_name': firstNameController.text,
+                              'last_name': lastNameController.text,
+                              'faculty': facultyValue,
+                              'major': majorValue,
+                              'role': 'strdnt',
+                              'year': 1
+                            }).onError((error, stackTrace) => print("Error : $error"));
+                          });
+
+                          await showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: const Text("สร้างบัญชีสำเร็จ"),
+                                  content: const Text(
+                                      "บัญชีของคุณถูกสร้างเรียบร้อยแล้ว"),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: const Text("ตกลง"),
+                                    ),
+                                  ],
+                                );
+                              });
+                          Navigator.pop(context);
+                        }
+                      } on FirebaseAuthException catch (e) {
+                        await showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: const Text("เกิดข้อผิดพลาด"),
+                                content: Text(e.message!),
                                 actions: [
                                   TextButton(
                                     onPressed: () {
@@ -185,43 +252,8 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                                     child: const Text("ตกลง"),
                                   ),
                                 ],
-                              ),
-                            );
-                          });
-                        } else {
-                          Navigator.pop(context);
-                          await FirebaseAuth.instance.createUserWithEmailAndPassword(email: emailController.text, password: passwordController.text);
-                          await showDialog(context: context, builder: (context) {
-                            return AlertDialog(
-                              title: const Text("สร้างบัญชีสำเร็จ"),
-                              content: const Text("บัญชีของคุณถูกสร้างเรียบร้อยแล้ว"),
-                              actions: [
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: const Text("ตกลง"),
-                                ),
-                              ],
-                            );
-                          });
-                          Navigator.pop(context);
-                        }
-                      } on FirebaseAuthException catch (e) {
-                        await showDialog(context: context, builder: (context) {
-                          return AlertDialog(
-                            title: const Text("เกิดข้อผิดพลาด"),
-                            content: Text(e.message!),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text("ตกลง"),
-                              ),
-                            ],
-                          );
-                        });
+                              );
+                            });
                       }
                     },
                     style: ElevatedButton.styleFrom(
