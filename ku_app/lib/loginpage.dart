@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () async {
@@ -83,15 +83,15 @@ class _LoginPageState extends State<LoginPage> {
                             password: passwordController.text.trim());
                         Navigator.pop(context);
                       },
-                      child: const Text(
-                        'เข้าสู่ระบบ',
-                        style: TextStyle(color: Colors.white),
-                      ),
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green[900],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5.0),
                           )),
+                      child: const Text(
+                        'เข้าสู่ระบบ',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ),
                 )

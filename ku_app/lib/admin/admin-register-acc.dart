@@ -1,11 +1,10 @@
 import 'package:awesome_select/awesome_select.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class AdminRegisterAccount extends StatefulWidget {
-  const AdminRegisterAccount({Key? key}) : super(key: key);
+  const AdminRegisterAccount({super.key});
 
   @override
   State<AdminRegisterAccount> createState() => _AdminRegisterAccountState();
@@ -21,11 +20,11 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  String facultyValue = "1";
-  String majorValue = "1";
+  String facultyValue = "F1";
+  String majorValue = "E1";
 
   List<S2Choice<String>> facultyOptions = [
-    S2Choice(value: "1", title: "คณะวิศวะกรรมศาสตร์"),
+    S2Choice(value: "F1", title: "คณะวิศวะกรรมศาสตร์"),
   ];
 
   List<S2Choice<String>> majorOptions = [
@@ -165,14 +164,14 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Container(
+                child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () async {
                       showDialog(
                           context: context,
                           builder: (context) {
-                            return Center(child: CircularProgressIndicator());
+                            return const Center(child: CircularProgressIndicator());
                           });
                       try {
                         if (passwordController.text !=
@@ -198,8 +197,6 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                                 );
                               });
                         } else {
-                          Navigator.pop(context);
-
                           await FirebaseAuth.instance
                               .createUserWithEmailAndPassword(
                                   email: emailController.text,
@@ -213,11 +210,11 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                               'last_name': lastNameController.text,
                               'faculty': facultyValue,
                               'major': majorValue,
-                              'role': 'strdnt',
+                              'role': 'student',
                               'year': 1
-                            }).onError((error, stackTrace) => print("Error : $error"));
+                            });
                           });
-
+                          Navigator.pop(context);
                           await showDialog(
                               context: context,
                               builder: (context) {

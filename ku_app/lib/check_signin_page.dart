@@ -14,9 +14,9 @@ class CheckSignInPage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return CheckRolePage();
+            return const CheckRolePage();
           } else {
-            return LoginPage();
+            return const LoginPage();
           }
         },
       ),

@@ -13,8 +13,8 @@ class CheckRolePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: role == 'student'
-          ? StdHomePage()
-          : AdminHomePage(),
+          ? const StdHomePage()
+          : const AdminHomePage(),
     );
   }
 }

@@ -1,9 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ku_app/admin/admin-register-acc.dart';
 
 class AdminMainPage extends StatefulWidget {
-  const AdminMainPage({Key? key}) : super(key: key);
+  const AdminMainPage({super.key});
 
   @override
   State<AdminMainPage> createState() => _AdminMainPageState();
@@ -26,11 +25,11 @@ class _AdminMainPageState extends State<AdminMainPage> {
                       MaterialPageRoute(
                           builder: (context) => const AdminRegisterAccount()));
                 },
-                child: Card(
-                  child: Container(
+                child: const Card(
+                  child: SizedBox(
                     width: 150,
                     height: 150,
-                    child: const Column(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
@@ -43,11 +42,11 @@ class _AdminMainPageState extends State<AdminMainPage> {
                   ),
                 ),
               ),
-              Card(
-                child: Container(
+              const Card(
+                child: SizedBox(
                   width: 150,
                   height: 150,
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(

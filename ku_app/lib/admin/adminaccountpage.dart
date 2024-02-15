@@ -18,21 +18,21 @@ class _AdminAccountPageState extends State<AdminAccountPage> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () async {
                     FirebaseAuth.instance.signOut();
                   },
-                  child: const Text(
-                    'ออกจากระบบ',
-                    style: TextStyle(color: Colors.white),
-                  ),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red[400],
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       )),
+                  child: const Text(
+                    'ออกจากระบบ',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             )
