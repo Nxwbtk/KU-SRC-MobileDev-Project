@@ -227,7 +227,7 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
-                                      child: const Text("ตกลง"),
+                                      child: const Text("กลับเมนูหลัก"),
                                     ),
                                   ],
                                 );
