@@ -260,7 +260,7 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                       ),
                     ),
                     child: const Text(
-                      "สร้างบัญชี",
+                      "สร้างบัญชีผู้ใช้",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
