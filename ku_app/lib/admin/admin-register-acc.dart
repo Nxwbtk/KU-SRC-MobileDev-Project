@@ -22,6 +22,7 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
   final confirmPasswordController = TextEditingController();
   String facultyValue = "F1";
   String majorValue = "E1";
+  String role = "student";
 
   List<S2Choice<String>> facultyOptions = [
     S2Choice(value: "F1", title: "คณะวิศวะกรรมศาสตร์"),
@@ -30,6 +31,11 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
   List<S2Choice<String>> majorOptions = [
     S2Choice(value: "E1", title: "วิศวกรรมคอมพิวเตอร์"),
     S2Choice(value: "E2", title: "วิศวกรรมไฟฟ้า"),
+  ];
+
+  List<S2Choice<String>> userRoles = [
+    S2Choice(value: "student", title: "นิสิต"),
+    S2Choice(value: "admin", title: "ผู้ดูแลระบบ"),
   ];
 
   @override
@@ -163,6 +169,26 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                 ),
               ),
               Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(5.0),
+                  ),
+                  child: SmartSelect<String>.single(
+                    title: "เลือกประเภทผู้ใช้",
+                    selectedValue: role,
+                    choiceItems: userRoles,
+                    onChange: (state) {
+                      setState(() {
+                        role = state.value;
+                      });
+                    },
+                  ),
+                ),
+              ),
+              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: SizedBox(
                   width: double.infinity,
@@ -210,7 +236,7 @@ class _AdminRegisterAccountState extends State<AdminRegisterAccount> {
                               'last_name': lastNameController.text,
                               'faculty': facultyValue,
                               'major': majorValue,
-                              'role': 'student',
+                              'role': role,
                               'year': 1
                             });
                           });
