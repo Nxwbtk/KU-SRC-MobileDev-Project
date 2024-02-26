@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ku_app/admin/admin-register-acc.dart';
+import 'package:ku_app/admin/admin_register_acc.dart';
 
 class AdminMainPage extends StatefulWidget {
   const AdminMainPage({super.key});
