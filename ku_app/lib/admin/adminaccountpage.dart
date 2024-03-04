@@ -24,8 +24,38 @@ class _AdminAccountPageState extends State<AdminAccountPage> {
             return const CircularProgressIndicator();
           }
           if (snapshot.hasData) {
-            print(snapshot.data!.data());
             dynamic data = snapshot.data!.data();
+            if (data == null) {
+              return Scaffold(
+                body: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                        child: SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              FirebaseAuth.instance.signOut();
+                            },
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.red[400],
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                )),
+                            child: const Text(
+                              'ออกจากระบบ',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              );
+            }
             return Scaffold(
               body: Center(
                 child: Column(
@@ -50,7 +80,7 @@ class _AdminAccountPageState extends State<AdminAccountPage> {
                     Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0),
                         child: Text(
-                            'ชื่อ-นามสกุล: ${data['first_name']} ${data['last_name']}',
+                            'ชื่อ-นามสกุล: ${data['first_name'] ?? ""} ${data['last_name'] ?? ""}',
                             style: const TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.normal))),
                     Padding(
