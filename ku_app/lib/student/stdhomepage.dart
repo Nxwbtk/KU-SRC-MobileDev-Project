@@ -69,7 +69,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('Plan page'),
+                title: const Text('Study Plan page'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 3;
