@@ -13,29 +13,7 @@ class _informationState extends State<information> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Center(
-          child: Image.asset('assets/imgs/KU2.jpg'),
-        ),
-        title: Center(
-          child: Text(
-            'ข้อมูลค่าเทอม',
-            style: TextStyle(
-              color: Color.fromARGB(255, 252, 252, 252),
-            ),
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-          ),
-        ],
-        backgroundColor: Color.fromARGB(255, 10, 191, 94),
-      ),
+      
       body: SingleChildScrollView(
         child: Column(
           children: [

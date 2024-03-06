@@ -15,27 +15,16 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Center(
-          child: Image.asset('assets/imgs/KU2.jpg'),
-        ),
-        title: Center(
-          child: Text('ช่องทางการชำระเงิน'),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-          ),
-        ],
-        backgroundColor: Color.fromARGB(255, 10, 191, 94),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Text(
+              'ช่องทางการชำระเงิน',
+              style: TextStyle(
+                color: Color.fromARGB(255, 14, 14, 14),
+                fontSize: 32,
+              ),
+            ),
             SizedBox(height: 10),
             Text(
               'จ่ายค่าเทอมปลายภาค',

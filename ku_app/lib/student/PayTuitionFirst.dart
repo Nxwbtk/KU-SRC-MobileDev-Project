@@ -12,24 +12,7 @@ class PayTuitionFirst extends StatefulWidget {
 class _PayTuitionFirstState extends State<PayTuitionFirst> {
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Center(
-          child: Image.asset('assets/imgs/KU2.jpg'),
-        ),
-        title: Center(
-          child: Text('จ่ายค่าเทอมปลายภาค'),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-          ),
-        ],
-        backgroundColor: Color.fromARGB(255, 10, 191, 94),
-      ),
+      
       body: SingleChildScrollView(
         child: Column(
           children: [

@@ -11,30 +11,7 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Center(
-          child: Image.asset('assets/imgs/KU2.jpg'),
-        ),
-        title: Center(
-          child: Text(
-            'QR-code',
-            style: TextStyle(
-              color: Color.fromARGB(255, 252, 252, 252),
-              fontSize: 32,
-            ),
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
-            ),
-          ),
-        ],
-        backgroundColor: Color.fromARGB(255, 10, 191, 94),
-      ),
+      
       body: SingleChildScrollView(
         child: Column(
           children: [
