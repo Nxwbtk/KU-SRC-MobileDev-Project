@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ku_app/student/PayTuitionSecond.dart';
 import 'package:ku_app/student/main.dart';
 
 class QrFirstSemester extends StatefulWidget {
