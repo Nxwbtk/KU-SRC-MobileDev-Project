@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter/services.dart';
 import 'package:ku_app/student/BankFirstSemester.dart';
-import 'package:ku_app/student/NextPage3.dart';
 import 'package:ku_app/student/PayTuitionFirst.dart';
 import 'package:ku_app/student/information.dart';
-
 
 class PayTuitionSecond extends StatefulWidget {
   const PayTuitionSecond({super.key});
@@ -17,67 +15,67 @@ class PayTuitionSecond extends StatefulWidget {
 class _PayTuitionSecondState extends State<PayTuitionSecond> {
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-              leading: Center(
-              child: Image.asset('assets/imgs/KU2.jpg'),
-            ),
-          title: Center(
-            child: Text('จ่ายค่าเทอม',
-            style: TextStyle(
-            color: Color.fromARGB(255, 243, 241, 241),
-            fontSize: 32,
-            ),
-          ),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.person,
-                color: Colors.white,
-              ),
-            ),
-          ],
-          backgroundColor: Color.fromARGB(255, 10, 191, 94),
+      appBar: AppBar(
+        leading: Center(
+          child: Image.asset('assets/imgs/KU2.jpg'),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Center(
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 10,
+        title: Center(
+          child: Text(
+            'จ่ายค่าเทอม',
+            style: TextStyle(
+              color: Color.fromARGB(255, 243, 241, 241),
+              fontSize: 32,
+            ),
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
+          ),
+        ],
+        backgroundColor: Color.fromARGB(255, 10, 191, 94),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'การเงินนิสิต',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 14, 14, 14),
+                      fontSize: 32,
                     ),
-                    Text(
-                      'การเงินนิสิต',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 14, 14, 14),
-                        fontSize: 32,
-                      ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          DateFormat.yMMMMd().format(DateTime.now()),
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 10, 191, 94),
-                          ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        DateFormat.yMMMMd().format(DateTime.now()),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 10, 191, 94),
                         ),
-                        const SizedBox(width: 10),
-                        DropdownExample(),
-                      ],
-                    ),
-                    const SizedBox(
-                          height: 20,
-                    ),
-                    Center(
+                      ),
+                      const SizedBox(width: 10),
+                      DropdownExample(),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Center(
                     child: Container(
                       width: 500,
                       height: 350,
                       color: Color.fromARGB(255, 245, 242, 242),
-                   
                       child: Stack(
                         children: [
                           Positioned(
@@ -88,14 +86,15 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               height: 150,
                               color: Color.fromARGB(255, 10, 191, 94),
                               child: Align(
-                                 alignment: Alignment.center,
-                              child: const Text('กลางภาค',
-                              style: TextStyle(
-                            color: Color.fromARGB(255, 237, 239, 238),
-                            fontSize: 24,
+                                alignment: Alignment.center,
+                                child: const Text(
+                                  'กลางภาค',
+                                  style: TextStyle(
+                                    color: Color.fromARGB(255, 237, 239, 238),
+                                    fontSize: 24,
+                                  ),
+                                ),
                               ),
-                              ),
-                            ),
                             ),
                           ),
                           Positioned(
@@ -121,22 +120,24 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                       ),
                                       SizedBox(width: 125),
                                       IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(builder: (context) => information()), 
-                                        );
-                                      },
-                                      icon: Icon(
-                                        Icons.insert_drive_file,
-                                        color: const Color.fromARGB(255, 9, 9, 9),
-                                        size: 50,
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    information()),
+                                          );
+                                        },
+                                        icon: Icon(
+                                          Icons.insert_drive_file,
+                                          color: const Color.fromARGB(
+                                              255, 9, 9, 9),
+                                          size: 50,
+                                        ),
                                       ),
-                                    ),
                                       SizedBox(width: 20),
                                     ],
                                   ),
-                                  
                                   Row(
                                     children: [
                                       SizedBox(width: 30),
@@ -161,31 +162,34 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               ),
                             ),
                           ),
-                          
-                          
                           Positioned(
-                              left: 0,
-                              top: 150,
-                              child: Container(
-                                width: 500,
-                                height: 65,
-                                decoration: BoxDecoration(
-                                  color: Color.fromRGBO(251, 252, 252, 1),
-                                  border: Border(
-                                    top: BorderSide(width: 1, color: const Color.fromARGB(255, 206, 206, 206)), 
-                                    bottom: BorderSide(width: 1, color: const Color.fromARGB(255, 206, 206, 206)), 
-                                  ),
+                            left: 0,
+                            top: 150,
+                            child: Container(
+                              width: 500,
+                              height: 65,
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(251, 252, 252, 1),
+                                border: Border(
+                                  top: BorderSide(
+                                      width: 1,
+                                      color: const Color.fromARGB(
+                                          255, 206, 206, 206)),
+                                  bottom: BorderSide(
+                                      width: 1,
+                                      color: const Color.fromARGB(
+                                          255, 206, 206, 206)),
                                 ),
-                                child: Column(
+                              ),
+                              child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                
-                                Row(
+                                  Row(
                                     children: [
                                       SizedBox(width: 40),
                                       SizedBox(height: 60),
                                       Text(
-                                       'ลงทะเบียนเรียนภาคการศึกษาปกติ',
+                                        'ลงทะเบียนเรียนภาคการศึกษาปกติ',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 16,
@@ -197,7 +201,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 18,
-                                         ),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -205,32 +209,37 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               ),
                             ),
                           ),
-
-                            Positioned(
-                              left: 0,
-                              top: 214,
-                              child: Container(
-                                width: 500,
-                                height: 70,
-                                decoration: BoxDecoration(
-                                  color: Color.fromRGBO(251, 252, 252, 1),
-                                  border: Border(
-                                    top: BorderSide(width: 1, color: const Color.fromARGB(255, 206, 206, 206)), 
-                                    bottom: BorderSide(width: 1, color: const Color.fromARGB(255, 206, 206, 206)), 
-                                  ),
+                          Positioned(
+                            left: 0,
+                            top: 214,
+                            child: Container(
+                              width: 500,
+                              height: 70,
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(251, 252, 252, 1),
+                                border: Border(
+                                  top: BorderSide(
+                                      width: 1,
+                                      color: const Color.fromARGB(
+                                          255, 206, 206, 206)),
+                                  bottom: BorderSide(
+                                      width: 1,
+                                      color: const Color.fromARGB(
+                                          255, 206, 206, 206)),
                                 ),
-                                child: Column(
+                              ),
+                              child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                
-                                Row(
+                                  Row(
                                     children: [
                                       SizedBox(width: 120),
                                       SizedBox(height: 60),
                                       Text(
-                                       'ยอดชำระทั้งหมด',
+                                        'ยอดชำระทั้งหมด',
                                         style: TextStyle(
-                                          color: Color.fromARGB(255, 11, 158, 249),
+                                          color:
+                                              Color.fromARGB(255, 11, 158, 249),
                                           fontSize: 18,
                                         ),
                                       ),
@@ -240,7 +249,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 24,
-                                         ),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -258,23 +267,25 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                
-                                Row(
+                                  Row(
                                     children: [
                                       SizedBox(width: 120),
                                       SizedBox(height: 60),
                                       Text(
-                                       'ชำระได้ถึงวันที่',
+                                        'ชำระได้ถึงวันที่',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 0, 0, 0),
                                           fontSize: 18,
                                         ),
                                       ),
                                       SizedBox(width: 10),
-                                       Text(
-                                      DateFormat.yMMMMd().format(DateTime.now().add(Duration(days: 30))),
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 247, 17, 5),
+                                      Text(
+                                        DateFormat.yMMMMd().format(
+                                            DateTime.now()
+                                                .add(Duration(days: 30))),
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 247, 17, 5),
                                         ),
                                       ),
                                     ],
@@ -283,76 +294,69 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               ),
                             ),
                           ),
-
-
-
-                          
                           Container(
                             width: 500,
                             height: 350,
-                          
                           ),
                         ],
                       ),
                     ),
                   ),
-                        const SizedBox(
-                          height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 10),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => BankFirstSemester()), 
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero, 
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                            minimumSize: Size(150, 70), 
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 10),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BankFirstSemester()),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: Size(150, 70),
+                        ),
+                        child: Text(
+                          'เลือกรูปแบบ',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
                           ),
-                          child: Text(
-                            'เลือกรูปแบบ',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                            ),
-                          ),
                         ),
-                        
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 100,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 100,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        backgroundColor: Color.fromARGB(255, 236, 234, 234),
-     );
+      ),
+      backgroundColor: Color.fromARGB(255, 236, 234, 234),
+    );
   }
 }
-
-    
 
 class DropdownExample extends StatefulWidget {
   @override
@@ -369,8 +373,8 @@ class _DropdownExampleState extends State<DropdownExample> {
       onChanged: (String? newValue) {
         setState(() {
           selectedRegion = newValue!;
-          
-          Navigator.pushReplacement( 
+
+          Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => PayTuitionFirst()),
           );
@@ -398,5 +402,3 @@ class _DropdownExampleState extends State<DropdownExample> {
     );
   }
 }
-
-

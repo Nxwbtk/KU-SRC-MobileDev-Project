@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ku_app/student/PayTuitionSecond.dart'; 
-
-
-
+import 'package:ku_app/student/PayTuitionSecond.dart';
 
 class information extends StatefulWidget {
   @override
@@ -22,11 +19,11 @@ class _informationState extends State<information> {
         ),
         title: Center(
           child: Text(
-                    'ข้อมูลค่าเทอม',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 252, 252, 252),
-                    ),
-                  ),
+            'ข้อมูลค่าเทอม',
+            style: TextStyle(
+              color: Color.fromARGB(255, 252, 252, 252),
+            ),
+          ),
         ),
         actions: [
           IconButton(
@@ -39,7 +36,7 @@ class _informationState extends State<information> {
         ],
         backgroundColor: Color.fromARGB(255, 10, 191, 94),
       ),
-        body: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
@@ -48,44 +45,38 @@ class _informationState extends State<information> {
                   const SizedBox(
                     height: 20,
                   ),
-                  
-                   Image.asset('assets/imgs/S1.png'),
-                   Image.asset('assets/imgs/S2.png'),
-                   Image.asset('assets/imgs/S3.png'),
-
-                 const SizedBox(height: 20),
-
-                 Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 10),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => PayTuitionSecond()), 
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero, 
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                            minimumSize: Size(150, 70), 
-                          ),
-                          child: Text(
-                            'หน้าหลัก',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                            ),
+                  Image.asset('assets/imgs/S1.png'),
+                  Image.asset('assets/imgs/S2.png'),
+                  Image.asset('assets/imgs/S3.png'),
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 10),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PayTuitionSecond()),
+                          );
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: Size(150, 70),
+                        ),
+                        child: Text(
+                          'หน้าหลัก',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
                           ),
                         ),
-                       
-                        
-                      ],
-                    ),
-
-
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -95,4 +86,3 @@ class _informationState extends State<information> {
     );
   }
 }
-

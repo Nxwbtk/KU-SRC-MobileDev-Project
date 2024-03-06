@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ku_app/student/PayTuitionSecond.dart';
-import 'package:ku_app/student/main.dart'; 
-
+import 'package:ku_app/student/main.dart';
 
 class QrSecondSemester extends StatefulWidget {
   @override
@@ -10,8 +8,6 @@ class QrSecondSemester extends StatefulWidget {
 }
 
 class _QrSecondSemesterState extends State<QrSecondSemester> {
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,11 +17,11 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
         ),
         title: Center(
           child: Text(
-                    'Qr-code',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 252, 252, 252),
-                    ),
-                  ),
+            'QR-code',
+            style: TextStyle(
+              color: Color.fromARGB(255, 252, 252, 252),
+            ),
+          ),
         ),
         actions: [
           IconButton(
@@ -38,7 +34,7 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
         ],
         backgroundColor: Color.fromARGB(255, 10, 191, 94),
       ),
-        body: SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
@@ -47,7 +43,6 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                   const SizedBox(
                     height: 20,
                   ),
-                  
                   Center(
                     child: Container(
                       width: 500,
@@ -74,9 +69,7 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                               ),
                             ),
                           ),
-                         
-
-                         Positioned(
+                          Positioned(
                             left: 95,
                             top: 296,
                             child: Container(
@@ -85,107 +78,94 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                               color: Color.fromARGB(255, 252, 252, 252),
                               child: Align(
                                 alignment: Alignment.center,
-                                
                                 child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Text(
-                                    'ยอดเงินรวมทั้งหมด  17900.00  บาท',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 12, 12, 12),
-                                      fontSize: 20,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'ยอดเงินรวมทั้งหมด  17900.00  บาท',
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 12, 12, 12),
+                                        fontSize: 20,
+                                      ),
                                     ),
-                                  ),
-                                  const Text(
-                                    '(สแกนเพื่อจ่ายค่าเทอม)',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 240, 38, 38),
-                                      fontSize: 16,
+                                    const Text(
+                                      '(สแกนเพื่อชำระค่าเทอม)',
+                                      style: TextStyle(
+                                        color: Color.fromARGB(255, 240, 38, 38),
+                                        fontSize: 16,
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
                                 ),
                               ),
                             ),
                           ),
-                         
-                          
-                            
-
                         ],
                       ),
                     ),
                   ),
-
-                 const SizedBox(height: 20),
-
-                 Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const SizedBox(height: 10),
-                        TextButton(
-                          onPressed: () {
-                           {
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 10),
+                      TextButton(
+                        onPressed: () {
+                          {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => MyApp()), 
+                              MaterialPageRoute(builder: (context) => MyApp()),
                             );
-                          
+
                             showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return AlertDialog(
-                                title: Text("ชำระสำเร็จแล้ว",
-                                style: TextStyle(
-                                color: Color.fromARGB(255, 60, 239, 5),
-                                fontSize: 20,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            
-                            
-                                content: Text("กรุณา กดปุ่มยืนยันเพื่อกลับไปหน้าหลัก",
-                                style: TextStyle(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                fontSize: 16,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                                actions: <Widget>[
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                   
-                                    child: Text('ยืนยัน'),
+                              context: context,
+                              builder: (BuildContext context) {
+                                return AlertDialog(
+                                  title: Text(
+                                    "ชำระสำเร็จแล้ว",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 239, 5),
+                                      fontSize: 20,
+                                    ),
+                                    textAlign: TextAlign.center,
                                   ),
-                                ],
-                              );
-                            },
+                                  content: Text(
+                                    "กรุณา กดปุ่มยืนยันเพื่อกลับไปหน้าหลัก",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      fontSize: 16,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text('ยืนยัน'),
+                                    ),
+                                  ],
+                                );
+                              },
                             );
-                            
                           }
                         },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero, 
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                            minimumSize: Size(150, 70), 
-                          ),
-                          child: Text(
-                            'ชำระแล้ว',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                            ),
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: Size(150, 70),
+                        ),
+                        child: Text(
+                          'ชำระแล้ว',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
                           ),
                         ),
-                       
-                        
-                      ],
-                    ),
-
-
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
