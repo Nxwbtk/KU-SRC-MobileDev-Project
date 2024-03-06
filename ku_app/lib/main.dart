@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:ku_app/student/firebase_options.dart';
-import 'package:ku_app/student/check_signin_page.dart';
+import 'package:ku_app/firebase_options.dart';
+import 'package:ku_app/check_signin_page.dart';
 
 void main() async {
   runZonedGuarded<Future<void>>(() async {

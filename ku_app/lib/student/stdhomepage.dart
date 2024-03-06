@@ -1,9 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ku_app/student/PayTuitionSecond.dart';
 import 'package:ku_app/student/emptypage.dart';
 import 'package:ku_app/student/home.dart';
-
 
 class StdHomePage extends StatefulWidget {
   const StdHomePage({super.key});
@@ -17,8 +15,6 @@ class _StdHomePageState extends State<StdHomePage> {
   final screen = [
     EmptyPage(),
     HomePage()
-    
-    
   ];
   @override
   Widget build(BuildContext context) {
@@ -62,15 +58,6 @@ class _StdHomePageState extends State<StdHomePage> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                ),
-                ListTile(
-                  title: const Text('PayTuition'),
-                  onTap: () {   
-                 Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PayTuitionSecond()), 
-                  );
-                 },
                 ),
               ],
             ),
