@@ -13,7 +13,7 @@ class _PlanState extends State<PlanPage> {
     return ListView(
       children: [
         Text(
-          'สถานะวิชาที่ลงทะเบียน',
+          'แผนการเรียน',
           style: TextStyle(fontSize: 30, color: Colors.black),
         ),
         Image.asset(
