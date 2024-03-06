@@ -244,7 +244,7 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                               textAlign: TextAlign.center,
                             ),
                             content: Text(
-                              "กรุณาเลือก Checkbox ก่อน",
+                              "กรุณาเลือก ธนาคาร ก่อน",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 241, 57, 57),
                                 fontSize: 16,
