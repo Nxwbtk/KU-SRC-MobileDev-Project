@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ku_app/student/PayTuitionSecond.dart'; 
+import 'package:ku_app/student/PayTuitionSecond.dart';
+import 'package:ku_app/student/main.dart'; 
 
 
 
@@ -126,11 +127,47 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                         const SizedBox(height: 10),
                         TextButton(
                           onPressed: () {
+                           {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => PayTuitionSecond()), 
+                              MaterialPageRoute(builder: (context) => MyApp()), 
                             );
-                          },
+                          
+                            showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text("ชำระสำเร็จแล้ว",
+                                style: TextStyle(
+                                color: Color.fromARGB(255, 60, 239, 5),
+                                fontSize: 20,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            
+                            
+                                content: Text("กรุณา กดปุ่มยืนยันเพื่อกลับไปหน้าหลัก",
+                                style: TextStyle(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                fontSize: 16,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                   
+                                    child: Text('ยืนยัน'),
+                                  ),
+                                ],
+                              );
+                            },
+                            );
+                            
+                          }
+                        },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero, 
                             tapTargetSize: MaterialTapTargetSize.shrinkWrap,

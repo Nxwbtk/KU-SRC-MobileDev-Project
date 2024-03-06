@@ -314,28 +314,7 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => NextPage3()), 
-                            );
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero, 
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                            backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                            minimumSize: Size(150, 70), 
-                          ),
-                          child: Text(
-                            'การเงิน',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                            ),
-                          ),
-                        ),
+                        
                       ],
                     ),
 
