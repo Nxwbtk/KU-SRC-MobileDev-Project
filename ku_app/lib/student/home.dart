@@ -11,7 +11,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Home Page"),
+      body: SingleChildScrollView(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Welcome to KU App'),
+                const SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
