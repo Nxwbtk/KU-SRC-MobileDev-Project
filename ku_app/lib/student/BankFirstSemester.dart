@@ -27,7 +27,7 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
             ),
             SizedBox(height: 10),
             Text(
-              'จ่ายค่าเทอมกลางภาค',
+              'ชำระค่าเทอมกลางภาค',
               style: TextStyle(
                 color: Color.fromARGB(255, 14, 14, 14),
                 fontSize: 32,
