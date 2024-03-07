@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ku_app/student/main.dart';
+import 'package:ku_app/main.dart';
 
-class QrSecondSemester extends StatefulWidget {
+
+class QrFirstSemester extends StatefulWidget {
   @override
-  _QrSecondSemesterState createState() => _QrSecondSemesterState();
+  _QrFirstSemesterState createState() => _QrFirstSemesterState();
 }
 
-class _QrSecondSemesterState extends State<QrSecondSemester> {
+class _QrFirstSemesterState extends State<QrFirstSemester> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +61,7 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     const Text(
-                                      'ยอดเงินรวมทั้งหมด  17900.00  บาท',
+                                      'ยอดเงินรวมทั้งหมด  18200.00  บาท',
                                       style: TextStyle(
                                         color: Color.fromARGB(255, 12, 12, 12),
                                         fontSize: 20,

@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter/services.dart';
-import 'package:ku_app/student/BankFirstSemester.dart';
-import 'package:ku_app/student/PayTuitionFirst.dart';
-import 'package:ku_app/student/information.dart';
+import 'package:ku_app/student/PayTuition/BankSecondSemester.dart';
+import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
+import 'package:ku_app/student/PayTuition/information.dart';
 
-class PayTuitionSecond extends StatefulWidget {
-  const PayTuitionSecond({super.key});
-
+class PayTuitionFirst extends StatefulWidget {
   @override
-  State<PayTuitionSecond> createState() => _PayTuitionSecondState();
+  _PayTuitionFirstState createState() => _PayTuitionFirstState();
 }
 
-class _PayTuitionSecondState extends State<PayTuitionSecond> {
+class _PayTuitionFirstState extends State<PayTuitionFirst> {
   Widget build(BuildContext context) {
     return Scaffold(
       
@@ -42,12 +39,10 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                         ),
                       ),
                       const SizedBox(width: 10),
-                      DropdownExample(),
+                      DropdownExample2(),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   Center(
                     child: Container(
                       width: 500,
@@ -65,7 +60,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               child: Align(
                                 alignment: Alignment.center,
                                 child: const Text(
-                                  'กลางภาค',
+                                  'ปลายภาค',
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 237, 239, 238),
                                     fontSize: 24,
@@ -119,7 +114,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                     children: [
                                       SizedBox(width: 30),
                                       Text(
-                                        '17,900.00',
+                                        '18200.00',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 24,
@@ -174,7 +169,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                       ),
                                       SizedBox(width: 120),
                                       Text(
-                                        '17900.00',
+                                        '18200.00',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 18,
@@ -222,7 +217,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                       ),
                                       SizedBox(width: 120),
                                       Text(
-                                        '17900.00',
+                                        '18200.00',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 24,
@@ -279,9 +274,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -291,7 +284,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BankFirstSemester()),
+                                builder: (context) => BankSecondSemester()),
                           );
                         },
                         style: TextButton.styleFrom(
@@ -330,18 +323,18 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 236, 234, 234),
+      backgroundColor: Color.fromARGB(255, 241, 240, 240),
     );
   }
 }
 
-class DropdownExample extends StatefulWidget {
+class DropdownExample2 extends StatefulWidget {
   @override
-  _DropdownExampleState createState() => _DropdownExampleState();
+  _DropdownExampleState2 createState() => _DropdownExampleState2();
 }
 
-class _DropdownExampleState extends State<DropdownExample> {
-  String selectedRegion = 'ภาคต้น';
+class _DropdownExampleState2 extends State<DropdownExample2> {
+  String selectedRegion = 'ภาคปลาย';
 
   @override
   Widget build(BuildContext context) {
@@ -353,7 +346,7 @@ class _DropdownExampleState extends State<DropdownExample> {
 
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => PayTuitionFirst()),
+            MaterialPageRoute(builder: (context) => PayTuitionSecond()),
           );
         });
       },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ku_app/student/PayTuitionSecond.dart';
+import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 
 class information extends StatefulWidget {
   @override

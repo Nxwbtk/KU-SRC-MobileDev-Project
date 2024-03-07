@@ -23,6 +23,13 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
+        },
+        {
+            "name": "Flutter (lib/student/check_role_page.dart)",
+            "type": "dart",
+            "request": "launch",
+            "cwd": "ku_app",
+            "program": "lib/student/check_role_page.dart"
         }
     ]
 }
