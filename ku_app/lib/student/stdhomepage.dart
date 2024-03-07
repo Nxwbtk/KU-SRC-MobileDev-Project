@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ku_app/student/emptypage.dart';
+import 'package:ku_app/student/home.dart';
 
 class StdHomePage extends StatefulWidget {
   const StdHomePage({super.key});
@@ -9,6 +11,11 @@ class StdHomePage extends StatefulWidget {
 }
 
 class _StdHomePageState extends State<StdHomePage> {
+  int _selectedIndex = 0;
+  final screen = [
+    EmptyPage(),
+    HomePage()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +34,17 @@ class _StdHomePageState extends State<StdHomePage> {
                 ListTile(
                   title: const Text('Home'),
                   onTap: () {
-                    Navigator.pop(context);
+                    setState(() {
+                      _selectedIndex = 1;
+                    });
+                  },
+                ),
+                ListTile(
+                  title: const Text('Logout Page'),
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 0;
+                    });
                   },
                 ),
                 ListTile(
@@ -46,24 +63,7 @@ class _StdHomePageState extends State<StdHomePage> {
             ),
           ),
         ),
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Welcome to KU App'),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text('You are logged in'),
-                ElevatedButton(
-                    onPressed: () {
-                      FirebaseAuth.instance.signOut();
-                    },
-                    child: const Text('Logout'))
-              ],
-            ),
-          ),
-        ));
+        body: screen[_selectedIndex],
+        );
   }
 }

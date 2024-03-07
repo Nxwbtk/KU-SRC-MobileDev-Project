@@ -63,7 +63,7 @@ class _AdminAccountPageState extends State<AdminAccountPage> {
                   children: [
                     const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 25.0),
-                        child: Text('ข้อมูลส่วนตัว',
+                        child: Text('ข้อมูลส่วนตัวของคุณ',
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold))),
                     const SizedBox(
