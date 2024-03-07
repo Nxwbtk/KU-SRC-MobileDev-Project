@@ -10,16 +10,13 @@ class GradePage extends StatefulWidget {
 class _GradePageState extends State<GradePage> {
   // Sample data for demonstration
   List<String> subjects = [
-    "Subject 1",
-    "Subject 2",
-    "Subject 3",
-    "Subject 4",
-    "Subject 5",
-    "Subject 6",
-    "Subject 7",
-    "Subject 8",
-    "Subject 9",
-    "Subject 10"
+    "01418331 4 หน่วยกิต ระบบปฏิบัติการ | D+ ",
+    "01418341 3 หน่วยกิต ทรัพย์สินทางปัญญาและจรรยาบรรณวิชาชีพ | B",
+    "01355108 3 หน่วยกิต ภาษาอังกฤษและวัฒนธรรมจากเพลง | A",
+    "01418497 3 หน่วยกิต สัมมนา | A",
+    "01418496 3 หน่วยกิต เรื่องเฉพาะทางวิทยาการคอมพิวเตอร์ | B+",
+    "01418221 3 หน่วยกิต ระบบฐานข้อมูลเบื้องต้น | D",
+    "01422111 3 หน่วยกิต การวิเคราะห์และการออกแบบระบบ | C",
   ];
 
   @override
