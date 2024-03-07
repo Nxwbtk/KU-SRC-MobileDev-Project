@@ -39,7 +39,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 ListTile(
                   title: const Text('Settings'),
                   onTap: () {
-                    Navigator.pop(context);
+                    Navigator.pop(context); ;
                   },
                 ),
               ],
