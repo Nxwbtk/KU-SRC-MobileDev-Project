@@ -1,107 +1,41 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+class GradePage extends StatefulWidget {
+  const GradePage({Key? key}) : super(key: key);
 
-class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'ระบบการศึกษา',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: GradeSystem(),
-    );
-  }
+  State<GradePage> createState() => _GradePageState();
 }
 
-class GradeSystem extends StatefulWidget {
-  @override
-  _GradeSystemState createState() => _GradeSystemState();
-}
-
-class _GradeSystemState extends State<GradeSystem> {
-  List<Map<String, dynamic>> subjects = [];
+class _GradePageState extends State<GradePage> {
+  // Sample data for demonstration
+  List<String> subjects = [
+    "Subject 1",
+    "Subject 2",
+    "Subject 3",
+    "Subject 4",
+    "Subject 5",
+    "Subject 6",
+    "Subject 7",
+    "Subject 8",
+    "Subject 9",
+    "Subject 10"
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('ระบบการศึกษา'),
+      appBar: AppBar(title: Text("Grade Page")),
+      body: ListView.builder(
+        itemCount: subjects.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(subjects[index]),
+            // Additional details for each subject can be added here
+            // For example: subtitle, trailing icon, etc.
+          );
+        },
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: subjects.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  title: Text(subjects[index]['subject']),
-                  trailing: Text(subjects[index]['grade']),
-                );
-              },
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: RaisedButton(
-              onPressed: () {
-                _addSubjectDialog(context);
-              },
-              child: Text('เพิ่มวิชา'),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Future<void> _addSubjectDialog(BuildContext context) async {
-    TextEditingController subjectController = TextEditingController();
-    TextEditingController gradeController = TextEditingController();
-
-    return showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('เพิ่มวิชา'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: subjectController,
-                decoration: InputDecoration(labelText: 'ชื่อวิชา'),
-              ),
-              TextField(
-                controller: gradeController,
-                decoration: InputDecoration(labelText: 'เกรด'),
-              ),
-            ],
-          ),
-          actions: [
-            FlatButton(
-              onPressed: () {
-                setState(() {
-                  subjects.add({
-                    'subject': subjectController.text,
-                    'grade': gradeController.text,
-                  });
-                });
-                Navigator.of(context).pop();
-              },
-              child: Text('เพิ่ม'),
-            ),
-            FlatButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('ยกเลิก'),
-            ),
-          ],
-        );
-      },
     );
   }
 }

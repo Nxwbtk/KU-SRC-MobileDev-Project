@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:ku_app/student/Grade.dart';
 import 'package:ku_app/student/emptypage.dart';
 import 'package:ku_app/student/home.dart';
 
@@ -14,7 +15,8 @@ class _StdHomePageState extends State<StdHomePage> {
   int _selectedIndex = 0;
   final screen = [
     EmptyPage(),
-    HomePage()
+    HomePage(),
+    GradePage()
   ];
   @override
   Widget build(BuildContext context) {
@@ -48,6 +50,14 @@ class _StdHomePageState extends State<StdHomePage> {
                   },
                 ),
                 ListTile(
+                  title: const Text('Grade'),
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 2;
+                    });
+                  },
+                ),
+                ListTile(
                   title: const Text('Profile'),
                   onTap: () {
                     Navigator.pop(context);
@@ -56,7 +66,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 ListTile(
                   title: const Text('Settings'),
                   onTap: () {
-                    Navigator.pop(context); ;
+                    Navigator.pop(context);
                   },
                 ),
               ],
