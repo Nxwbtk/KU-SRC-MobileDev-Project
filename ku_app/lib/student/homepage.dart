@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Container(
               margin: const EdgeInsets.all(10),
               width: 350,
@@ -98,50 +98,86 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 20),
             Container(
               margin: const EdgeInsets.all(10),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Card(
-                        child: Column(
-                          children: [
-                            Icon(Icons.map),
-                            Text("การจองสถานที่"),
-                          ],
+                      Expanded(
+                        child: GestureDetector(
+                          child: const SizedBox(
+                            height: 100,
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.map),
+                                  Text("การจองสถานที่"),
+                                ],
+                              ),
+                            ),
+                          ),
+                          onTap: () {},
                         ),
                       ),
-                      Card(
-                        child: Column(
-                          children: [
-                            Icon(Icons.map),
-                            Text("การจองสถานที่"),
-                          ],
+                      Expanded(
+                        child: GestureDetector(
+                          child: const SizedBox(
+                            height: 100,
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.pin_drop),
+                                  Text("แผนที่"),
+                                ],
+                              ),
+                            ),
+                          ),
+                          onTap: () {},
                         ),
-                      )
+                      ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Card(
-                        child: Column(
-                          children: [
-                            Icon(Icons.map),
-                            Text("การจองสถานที่"),
-                          ],
+                      Expanded(
+                        child: GestureDetector(
+                          child: const SizedBox(
+                            height: 100,
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.book),
+                                  Text("สำนักงานหอสมุด"),
+                                ],
+                              ),
+                            ),
+                          ),
+                          onTap: () {},
                         ),
                       ),
-                      Card(
-                        child: Column(
-                          children: [
-                            Icon(Icons.map),
-                            Text("การจองสถานที่"),
-                          ],
+                      Expanded(
+                        child: GestureDetector(
+                          child: const SizedBox(
+                            height: 100,
+                            child: Card(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.headset),
+                                  Text("การจองสถานที่"),
+                                ],
+                              ),
+                            ),
+                          ),
+                          onTap: () {},
                         ),
-                      )
+                      ),
                     ],
                   )
                 ],
