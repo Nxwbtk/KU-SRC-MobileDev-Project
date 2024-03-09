@@ -1,5 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
+>>>>>>> Pay-tuition
 import 'package:ku_app/student/emptypage.dart';
 import 'package:ku_app/student/home.dart';
 
