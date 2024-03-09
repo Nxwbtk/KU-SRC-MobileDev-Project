@@ -7,12 +7,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-<<<<<<< HEAD
 import 'package:ku_app/main.dart';
-=======
 import '../lib/main.dart';
->>>>>>> Pay-tuition
+
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
