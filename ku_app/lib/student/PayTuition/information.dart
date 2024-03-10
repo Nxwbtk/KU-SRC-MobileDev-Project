@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 
-class information extends StatefulWidget {
-  const information({super.key});
+class InformationPage extends StatefulWidget {
+  const InformationPage({super.key});
 
   @override
-  _informationState createState() => _informationState();
+  State<InformationPage> createState() => _InformationPageState();
 }
 
-class _informationState extends State<information> {
-  bool isChecked = false;
-
+class _InformationPageState extends State<InformationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -22,11 +19,17 @@ class _informationState extends State<information> {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 20,
+                    height: 40,
                   ),
-                  Image.asset('assets/imgs/S1.png'),
-                  Image.asset('assets/imgs/S2.png'),
-                  Image.asset('assets/imgs/S3.png'),
+                  const Image(
+                    image: AssetImage('lib/assets/imgs/S1.png'),
+                  ),
+                  const Image(
+                    image: AssetImage('lib/assets/imgs/S2.png'),
+                  ),
+                  const Image(
+                    image: AssetImage('lib/assets/imgs/S3.png'),
+                  ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -43,8 +46,9 @@ class _informationState extends State<information> {
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
-                          minimumSize: const Size(150, 70),
+                          backgroundColor:
+                              const Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: const Size(100, 50),
                         ),
                         child: const Text(
                           'หน้าหลัก',
@@ -56,6 +60,7 @@ class _informationState extends State<information> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),

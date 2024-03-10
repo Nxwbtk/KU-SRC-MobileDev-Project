@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 import 'package:ku_app/student/accountpage.dart';
 import 'package:ku_app/student/emptypage.dart';
 import 'package:ku_app/student/homepage.dart';
@@ -12,7 +13,7 @@ class StdHomePage extends StatefulWidget {
 
 class _StdHomePageState extends State<StdHomePage> {
   int _selectedIndex = 0;
-  final screen = [const HomePage(), const EmptyPage(), const AccountPage()];
+  final screen = [const HomePage(), const PayTuitionSecond(), const EmptyPage(), const AccountPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +37,14 @@ class _StdHomePageState extends State<StdHomePage> {
                   });
                 },
               ),
-
+              ListTile(
+                title: const Text('PayTuition'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 1;
+                  });
+                },
+              ),
               ListTile(
                 title: const Text('Profile'),
                 onTap: () {
@@ -53,7 +61,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 title: const Text('บัญชีของคุณ'),
                 onTap: () {
                   setState(() {
-                    _selectedIndex = 2;
+                    _selectedIndex = 3;
                   });
                 },
               ),

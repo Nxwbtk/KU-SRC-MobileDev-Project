@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ku_app/main.dart';
 
-
 class QrFirstSemester extends StatefulWidget {
   const QrFirstSemester({super.key});
 
   @override
-  _QrFirstSemesterState createState() => _QrFirstSemesterState();
+  State<QrFirstSemester> createState() => _QrFirstSemesterState();
 }
 
 class _QrFirstSemesterState extends State<QrFirstSemester> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -31,7 +29,7 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                       child: Stack(
                         children: [
                           Positioned(
-                            left: 95,
+                            left: 45,
                             top: 45,
                             child: Container(
                               width: 325,
@@ -50,7 +48,7 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                             ),
                           ),
                           Positioned(
-                            left: 95,
+                            left: 45,
                             top: 296,
                             child: Container(
                               width: 325,
@@ -92,11 +90,6 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                       TextButton(
                         onPressed: () {
                           {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const MyApp()),
-                            );
-
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
@@ -120,7 +113,12 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                                   actions: <Widget>[
                                     TextButton(
                                       onPressed: () {
-                                        Navigator.of(context).pop();
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const MyApp()),
+                                        );
                                       },
                                       child: const Text('ยืนยัน'),
                                     ),
@@ -133,7 +131,8 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                          backgroundColor:
+                              const Color.fromARGB(255, 11, 158, 249),
                           minimumSize: const Size(150, 70),
                         ),
                         child: const Text(
