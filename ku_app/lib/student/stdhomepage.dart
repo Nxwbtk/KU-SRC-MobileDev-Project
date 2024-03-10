@@ -38,23 +38,11 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('PayTuition'),
+                title: const Text('ชำระค่าเทอม'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 1;
                   });
-                },
-              ),
-              ListTile(
-                title: const Text('Profile'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                title: const Text('Settings'),
-                onTap: () {
-                  Navigator.pop(context);
                 },
               ),
               ListTile(

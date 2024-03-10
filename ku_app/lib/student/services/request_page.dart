@@ -67,8 +67,9 @@ class _RequestPageState extends State<RequestPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const ViewEditRequestPage()));
+                                builder: (context) => ViewEditRequestPage(
+                                      request: request,
+                                    )));
                       },
                     ),
                   );
