@@ -21,7 +21,7 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 10,
+                    height: 40,
                   ),
                   Text(
                     'การเงินนิสิต',
@@ -287,11 +287,11 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       TextButton(
                         onPressed: () {
                           Navigator.push(

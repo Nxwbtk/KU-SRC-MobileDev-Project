@@ -24,7 +24,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 10,
+                    height: 40,
                   ),
                   Text(
                     'การเงินนิสิต',
@@ -293,7 +293,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -304,7 +304,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) =>   QrSecondSemester()),
+                                builder: (_) =>   BankSecondSemester()),
                           );
                         },
                         style: TextButton.styleFrom(

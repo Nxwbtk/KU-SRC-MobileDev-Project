@@ -8,7 +8,7 @@ class information extends StatefulWidget {
 }
 
 class _informationState extends State<information> {
-  bool isChecked = false;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,18 @@ class _informationState extends State<information> {
               child: Column(
                 children: [
                   const SizedBox(
-                    height: 20,
+                    height: 40,
                   ),
-                  Image.asset('assets/imgs/S1.png'),
-                  Image.asset('assets/imgs/S2.png'),
-                  Image.asset('assets/imgs/S3.png'),
+                  const Image(
+                  image: AssetImage('lib/assets/imgs/S1.png'),
+                ),
+                const Image(
+                  image: AssetImage('lib/assets/imgs/S2.png'),
+                ),
+                const Image(
+                  image: AssetImage('lib/assets/imgs/S3.png'),
+                ),
+                 
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +50,7 @@ class _informationState extends State<information> {
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                          minimumSize: Size(150, 70),
+                          minimumSize: Size(100, 50),
                         ),
                         child: Text(
                           'หน้าหลัก',
@@ -55,6 +62,7 @@ class _informationState extends State<information> {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),

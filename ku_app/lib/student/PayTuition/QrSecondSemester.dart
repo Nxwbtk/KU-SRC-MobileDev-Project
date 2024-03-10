@@ -11,7 +11,6 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -29,7 +28,7 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                       child: Stack(
                         children: [
                           Positioned(
-                            left: 95,
+                            left: 45,
                             top: 45,
                             child: Container(
                               width: 325,
@@ -48,7 +47,7 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                             ),
                           ),
                           Positioned(
-                            left: 95,
+                            left: 45,
                             top: 296,
                             child: Container(
                               width: 325,
@@ -90,11 +89,6 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                       TextButton(
                         onPressed: () {
                           {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => MyApp()),
-                            );
-
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
@@ -118,7 +112,11 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                                   actions: <Widget>[
                                     TextButton(
                                       onPressed: () {
-                                        Navigator.of(context).pop();
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => MyApp()),
+                                        );
                                       },
                                       child: Text('ยืนยัน'),
                                     ),
