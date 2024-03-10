@@ -5,7 +5,7 @@ class QrFirstSemester extends StatefulWidget {
   const QrFirstSemester({super.key});
 
   @override
-  _QrFirstSemesterState createState() => _QrFirstSemesterState();
+  State<QrFirstSemester> createState() => _QrFirstSemesterState();
 }
 
 class _QrFirstSemesterState extends State<QrFirstSemester> {
@@ -116,7 +116,8 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => MyApp()),
+                                              builder: (context) =>
+                                                  const MyApp()),
                                         );
                                       },
                                       child: const Text('ยืนยัน'),
@@ -130,7 +131,8 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                          backgroundColor:
+                              const Color.fromARGB(255, 11, 158, 249),
                           minimumSize: const Size(150, 70),
                         ),
                         child: const Text(

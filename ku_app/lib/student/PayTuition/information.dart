@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 
-class information extends StatefulWidget {
-  const information({super.key});
+class InformationPage extends StatefulWidget {
+  const InformationPage({super.key});
 
   @override
-  _informationState createState() => _informationState();
+  State<InformationPage> createState() => _InformationPageState();
 }
 
-class _informationState extends State<information> {
-
-
+class _InformationPageState extends State<InformationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,15 +22,14 @@ class _informationState extends State<information> {
                     height: 40,
                   ),
                   const Image(
-                  image: AssetImage('lib/assets/imgs/S1.png'),
-                ),
-                const Image(
-                  image: AssetImage('lib/assets/imgs/S2.png'),
-                ),
-                const Image(
-                  image: AssetImage('lib/assets/imgs/S3.png'),
-                ),
-
+                    image: AssetImage('lib/assets/imgs/S1.png'),
+                  ),
+                  const Image(
+                    image: AssetImage('lib/assets/imgs/S2.png'),
+                  ),
+                  const Image(
+                    image: AssetImage('lib/assets/imgs/S3.png'),
+                  ),
                   const SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -50,8 +46,9 @@ class _informationState extends State<information> {
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                          minimumSize: Size(100, 50),
+                          backgroundColor:
+                              const Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: const Size(100, 50),
                         ),
                         child: const Text(
                           'หน้าหลัก',

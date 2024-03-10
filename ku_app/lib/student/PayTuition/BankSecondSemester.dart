@@ -4,8 +4,6 @@ import 'package:ku_app/student/PayTuition/QrSecondSemester.dart';
 class BankSecondSemester extends StatefulWidget {
   const BankSecondSemester({super.key});
 
-  const BankSecondSemester({super.key});
-
   @override
   State<BankSecondSemester> createState() => _BankSecondSemesterState();
 }
@@ -15,13 +13,14 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
   bool isChecked2 = false;
   bool isChecked3 = false;
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(height: 40),
-            Text(
+            const Text(
               'ชำระค่าเทอมกลาง',
               style: TextStyle(
                 color: Color.fromARGB(255, 14, 14, 14),
@@ -33,7 +32,7 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
               child: Container(
                 width: 380,
                 height: 383,
-                color: Color.fromARGB(255, 245, 242, 242),
+                color: const Color.fromARGB(255, 245, 242, 242),
                 child: Stack(
                   children: [
                     Positioned(
@@ -73,21 +72,21 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                         ),
                         child: Row(
                           children: [
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             const Image(
                               image: AssetImage('lib/assets/imgs/SCB.png'),
                               width: 50,
                               height: 40,
                             ),
-                            SizedBox(width: 20),
-                            Text(
+                            const SizedBox(width: 20),
+                            const Text(
                               'ธนาคารไทยพาณิชย์',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
                                 fontSize: 20,
                               ),
                             ),
-                            SizedBox(width: 50),
+                            const SizedBox(width: 50),
                             Checkbox(
                               value: isChecked1,
                               onChanged: (bool? newValue) {
@@ -122,21 +121,21 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                         ),
                         child: Row(
                           children: [
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             const Image(
                               image: AssetImage('lib/assets/imgs/KB.png'),
                               width: 50,
                               height: 40,
                             ),
-                            SizedBox(width: 20),
-                            Text(
+                            const SizedBox(width: 20),
+                            const Text(
                               'ธนาคารกสิกรไทย',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
                                 fontSize: 20,
                               ),
                             ),
-                            SizedBox(width: 70),
+                            const SizedBox(width: 70),
                             Checkbox(
                               value: isChecked2,
                               onChanged: (bool? newValue) {
@@ -171,21 +170,21 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                         ),
                         child: Row(
                           children: [
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             const Image(
                               image: AssetImage('lib/assets/imgs/BK.png'),
                               width: 50,
                               height: 40,
                             ),
-                            SizedBox(width: 20),
-                            Text(
+                            const SizedBox(width: 20),
+                            const Text(
                               'ธนาคารกรุงเทพ',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
                                 fontSize: 20,
                               ),
                             ),
-                            SizedBox(width: 90),
+                            const SizedBox(width: 90),
                             Checkbox(
                               value: isChecked3,
                               onChanged: (bool? newValue) {
@@ -217,7 +216,7 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => QrSecondSemester()),
+                            builder: (context) => const QrSecondSemester()),
                       );
                     } else {
                       showDialog(

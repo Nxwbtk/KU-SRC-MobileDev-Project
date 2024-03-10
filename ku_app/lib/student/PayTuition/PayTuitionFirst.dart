@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:ku_app/student/PayTuition/BankFirstSemester.dart';
-import 'package:ku_app/student/PayTuition/BankSecondSemester.dart';
 import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 import 'package:ku_app/student/PayTuition/information.dart';
 
@@ -9,14 +8,13 @@ class PayTuitionFirst extends StatefulWidget {
   const PayTuitionFirst({super.key});
 
   @override
-  _PayTuitionFirstState createState() => _PayTuitionFirstState();
+  State<PayTuitionFirst> createState() => _PayTuitionFirstState();
 }
 
 class _PayTuitionFirstState extends State<PayTuitionFirst> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -47,11 +45,11 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                     ],
                   ),
                   const SizedBox(height: 20),
-                   Center(
+                  Center(
                     child: Container(
                       width: 380,
                       height: 219,
-                      color: Color.fromARGB(255, 245, 242, 242),
+                      color: const Color.fromARGB(255, 245, 242, 242),
                       child: Stack(
                         children: [
                           Positioned(
@@ -60,8 +58,8 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                             child: Container(
                               width: 90,
                               height: 100,
-                              color: Color.fromARGB(255, 10, 191, 94),
-                              child: Align(
+                              color: const Color.fromARGB(255, 10, 191, 94),
+                              child: const Align(
                                 alignment: Alignment.center,
                                 child: Text(
                                   'ปลายภาค',
@@ -74,44 +72,43 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                             ),
                           ),
                           Positioned(
-                            left:90,
+                            left: 90,
                             top: 0,
                             child: Container(
                               width: 290,
                               height: 100,
-                              color: Color.fromRGBO(251, 252, 252, 1),
+                              color: const Color.fromRGBO(251, 252, 252, 1),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(height: 2),
+                                  const SizedBox(height: 2),
                                   Row(
                                     children: [
-                                      SizedBox(width: 10),
-                                      Text(
+                                      const SizedBox(width: 10),
+                                      const Text(
                                         'ยอดรอการชำระ',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 14,
                                         ),
                                       ),
-                                      SizedBox(width: 90),
+                                      const SizedBox(width: 90),
                                       IconButton(
                                         onPressed: () {
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    const information()),
+                                                    const InformationPage()),
                                           );
                                         },
                                         icon: const Icon(
                                           Icons.insert_drive_file,
-                                          color: Color.fromARGB(
-                                              255, 9, 9, 9),
+                                          color: Color.fromARGB(255, 9, 9, 9),
                                           size: 50,
                                         ),
                                       ),
-                                      SizedBox(width: 2),
+                                      const SizedBox(width: 2),
                                     ],
                                   ),
                                   const Row(
@@ -144,17 +141,17 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                             child: Container(
                               width: 380,
                               height: 45,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color.fromRGBO(251, 252, 252, 1),
                                 border: Border(
                                   top: BorderSide(
                                       width: 1,
-                                      color: Color.fromARGB(
-                                          255, 206, 206, 206)),
+                                      color:
+                                          Color.fromARGB(255, 206, 206, 206)),
                                   bottom: BorderSide(
                                       width: 1,
-                                      color: Color.fromARGB(
-                                          255, 206, 206, 206)),
+                                      color:
+                                          Color.fromARGB(255, 206, 206, 206)),
                                 ),
                               ),
                               child: const Column(
@@ -191,17 +188,17 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                             child: Container(
                               width: 380,
                               height: 40,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color.fromRGBO(251, 252, 252, 1),
                                 border: Border(
                                   top: BorderSide(
                                       width: 1,
-                                      color: Color.fromARGB(
-                                          255, 206, 206, 206)),
+                                      color:
+                                          Color.fromARGB(255, 206, 206, 206)),
                                   bottom: BorderSide(
                                       width: 1,
-                                      color: Color.fromARGB(
-                                          255, 206, 206, 206)),
+                                      color:
+                                          Color.fromARGB(255, 206, 206, 206)),
                                 ),
                               ),
                               child: const Column(
@@ -239,17 +236,17 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                             child: Container(
                               width: 380,
                               height: 40,
-                               decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color.fromRGBO(251, 252, 252, 1),
                                 border: Border(
                                   top: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
-                                          255, 206, 206, 206)),
+                                      color:
+                                          Color.fromARGB(255, 206, 206, 206)),
                                   bottom: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
-                                          255, 206, 206, 206)),
+                                      color:
+                                          Color.fromARGB(255, 206, 206, 206)),
                                 ),
                               ),
                               child: Column(
@@ -257,9 +254,9 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                                 children: [
                                   Row(
                                     children: [
-                                      SizedBox(width: 40),
-                                      SizedBox(height: 35),
-                                      Text(
+                                      const SizedBox(width: 40),
+                                      const SizedBox(height: 35),
+                                      const Text(
                                         'ชำระได้ถึงวันที่',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 0, 0, 0),
@@ -300,13 +297,15 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BankFirstSemester()),
+                                builder: (context) =>
+                                    const BankFirstSemester()),
                           );
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                          backgroundColor:
+                              const Color.fromARGB(255, 11, 158, 249),
                           minimumSize: const Size(150, 70),
                         ),
                         child: const Text(
@@ -348,7 +347,7 @@ class DropdownExample2 extends StatefulWidget {
   const DropdownExample2({super.key});
 
   @override
-  _DropdownExampleState2 createState() => _DropdownExampleState2();
+  State<DropdownExample2> createState() => _DropdownExampleState2();
 }
 
 class _DropdownExampleState2 extends State<DropdownExample2> {
