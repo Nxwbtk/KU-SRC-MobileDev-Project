@@ -6,14 +6,17 @@ import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 import 'package:ku_app/student/PayTuition/information.dart';
 
 class PayTuitionFirst extends StatefulWidget {
+  const PayTuitionFirst({super.key});
+
   @override
   _PayTuitionFirstState createState() => _PayTuitionFirstState();
 }
 
 class _PayTuitionFirstState extends State<PayTuitionFirst> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -23,7 +26,7 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                   const SizedBox(
                     height: 40,
                   ),
-                  Text(
+                  const Text(
                     'การเงินนิสิต',
                     style: TextStyle(
                       color: Color.fromARGB(255, 14, 14, 14),
@@ -35,12 +38,12 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                     children: [
                       Text(
                         DateFormat.yMMMMd().format(DateTime.now()),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color.fromARGB(255, 10, 191, 94),
                         ),
                       ),
                       const SizedBox(width: 10),
-                      DropdownExample2(),
+                      const DropdownExample2(),
                     ],
                   ),
                   const SizedBox(height: 20),
@@ -60,7 +63,7 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                               color: Color.fromARGB(255, 10, 191, 94),
                               child: Align(
                                 alignment: Alignment.center,
-                                child: const Text(
+                                child: Text(
                                   'ปลายภาค',
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 237, 239, 238),
@@ -98,12 +101,12 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    information()),
+                                                    const information()),
                                           );
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.insert_drive_file,
-                                          color: const Color.fromARGB(
+                                          color: Color.fromARGB(
                                               255, 9, 9, 9),
                                           size: 50,
                                         ),
@@ -111,7 +114,7 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                                       SizedBox(width: 2),
                                     ],
                                   ),
-                                  Row(
+                                  const Row(
                                     children: [
                                       SizedBox(width: 30),
                                       Text(
@@ -146,15 +149,15 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                                 border: Border(
                                   top: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                   bottom: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                 ),
                               ),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
@@ -193,15 +196,15 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                                 border: Border(
                                   top: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                   bottom: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                 ),
                               ),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
@@ -263,12 +266,12 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                                           fontSize: 14,
                                         ),
                                       ),
-                                      SizedBox(width: 10),
+                                      const SizedBox(width: 10),
                                       Text(
                                         DateFormat.yMMMMd().format(
                                             DateTime.now()
-                                                .add(Duration(days: 30))),
-                                        style: TextStyle(
+                                                .add(const Duration(days: 30))),
+                                        style: const TextStyle(
                                           color:
                                               Color.fromARGB(255, 247, 17, 5),
                                         ),
@@ -303,10 +306,10 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                          minimumSize: Size(150, 70),
+                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: const Size(150, 70),
                         ),
-                        child: Text(
+                        child: const Text(
                           'เลือกรูปแบบ',
                           style: TextStyle(
                             color: Colors.white,
@@ -319,13 +322,13 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                   const SizedBox(
                     height: 100,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
                     ],
@@ -336,12 +339,14 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 241, 240, 240),
+      backgroundColor: const Color.fromARGB(255, 241, 240, 240),
     );
   }
 }
 
 class DropdownExample2 extends StatefulWidget {
+  const DropdownExample2({super.key});
+
   @override
   _DropdownExampleState2 createState() => _DropdownExampleState2();
 }
@@ -359,25 +364,25 @@ class _DropdownExampleState2 extends State<DropdownExample2> {
 
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => PayTuitionSecond()),
+            MaterialPageRoute(builder: (context) => const PayTuitionSecond()),
           );
         });
       },
-      dropdownColor: Color.fromARGB(255, 248, 249, 249),
-      style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
+      dropdownColor: const Color.fromARGB(255, 248, 249, 249),
+      style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
       items: <String>['ภาคต้น', 'ภาคปลาย']
           .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Color.fromARGB(255, 10, 191, 94),
+              color: const Color.fromARGB(255, 10, 191, 94),
             ),
             child: Text(
               value,
-              style: TextStyle(color: Color.fromARGB(255, 251, 250, 250)),
+              style: const TextStyle(color: Color.fromARGB(255, 251, 250, 250)),
             ),
           ),
         );

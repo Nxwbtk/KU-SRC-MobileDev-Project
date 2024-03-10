@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:ku_app/student/PayTuition/QrSecondSemester.dart';
 
 class BankSecondSemester extends StatefulWidget {
+  const BankSecondSemester({super.key});
+
   const BankSecondSemester({super.key});
 
   @override
@@ -41,8 +42,8 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                       child: Container(
                         width: 380,
                         height: 100,
-                        color: Color.fromARGB(255, 10, 191, 94),
-                        child: Align(
+                        color: const Color.fromARGB(255, 10, 191, 94),
+                        child: const Align(
                           alignment: Alignment.center,
                           child: Text(
                             'เลือกธนาคาร',
@@ -61,10 +62,10 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                         width: 380,
                         height: 90,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 181, 246, 212),
+                          color: const Color.fromARGB(255, 181, 246, 212),
                           border: Border.all(
                             color: isChecked1
-                                ? Color.fromARGB(255, 10, 191, 94)
+                                ? const Color.fromARGB(255, 10, 191, 94)
                                 : Colors.transparent,
                             width: 2,
                           ),
@@ -110,10 +111,10 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                         width: 380,
                         height: 90,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 181, 246, 212),
+                          color: const Color.fromARGB(255, 181, 246, 212),
                           border: Border.all(
                             color: isChecked2
-                                ? Color.fromARGB(255, 10, 191, 94)
+                                ? const Color.fromARGB(255, 10, 191, 94)
                                 : Colors.transparent,
                             width: 2,
                           ),
@@ -159,10 +160,10 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                         width: 380,
                         height: 90,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 181, 246, 212),
+                          color: const Color.fromARGB(255, 181, 246, 212),
                           border: Border.all(
                             color: isChecked3
-                                ? Color.fromARGB(255, 10, 191, 94)
+                                ? const Color.fromARGB(255, 10, 191, 94)
                                 : Colors.transparent,
                             width: 2,
                           ),
@@ -223,7 +224,7 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text(
+                            title: const Text(
                               "แจ้งเตือน",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
@@ -231,7 +232,7 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                               ),
                               textAlign: TextAlign.center,
                             ),
-                            content: Text(
+                            content: const Text(
                               "กรุณาเลือก ธนาคาร ก่อน",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 241, 57, 57),
@@ -244,7 +245,7 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: Text('ปิด'),
+                                child: const Text('ปิด'),
                               ),
                             ],
                           );
@@ -255,10 +256,10 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                    minimumSize: Size(150, 70),
+                    backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                    minimumSize: const Size(150, 70),
                   ),
-                  child: Text(
+                  child: const Text(
                     'เลือก',
                     style: TextStyle(
                       color: Colors.white,
