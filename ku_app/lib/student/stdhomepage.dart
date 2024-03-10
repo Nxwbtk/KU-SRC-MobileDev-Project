@@ -69,7 +69,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('Study Plan page'),
+                title: const Text('แผนการเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 3;
@@ -77,7 +77,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('Register'),
+                title: const Text('ลงทะเบียนเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 4;
@@ -93,7 +93,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('Schedule'),
+                title: const Text('ตารางเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 6;
