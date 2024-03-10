@@ -60,6 +60,16 @@ class _StdHomePageState extends State<StdHomePage> {
                     Navigator.pop(context);
                   },
                 ),
+                 ListTile(
+                  title: const Text('PayTuition'),
+                  onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PayTuitionSecond()),
+                          );
+                        },
+                ),
               ],
             ),
           ),

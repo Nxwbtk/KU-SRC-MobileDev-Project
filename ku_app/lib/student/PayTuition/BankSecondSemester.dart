@@ -3,8 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:ku_app/student/PayTuition/QrSecondSemester.dart';
 
 class BankSecondSemester extends StatefulWidget {
+   const BankSecondSemester({super.key});
+
   @override
-  _BankSecondSemesterState createState() => _BankSecondSemesterState();
+ State<BankSecondSemester> createState() => _BankSecondSemesterState();
 }
 
 class _BankSecondSemesterState extends State<BankSecondSemester> {
@@ -12,7 +14,6 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
   bool isChecked2 = false;
   bool isChecked3 = false;
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
