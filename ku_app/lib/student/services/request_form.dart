@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class RequestForm extends StatefulWidget {
@@ -8,6 +10,9 @@ class RequestForm extends StatefulWidget {
 }
 
 class _RequestFormState extends State<RequestForm> {
+  CollectionReference requestCollection =
+      FirebaseFirestore.instance.collection('std_request');
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   final TextEditingController _topicRequestController = TextEditingController();
   final TextEditingController _detailRequestController =
       TextEditingController();
@@ -53,23 +58,13 @@ class _RequestFormState extends State<RequestForm> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            title: const Text("ขออภัย"),
-                            content: const Text("ยังไม่สามารถส่งคำร้องได้"),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                                child: const Text("ปิด"),
-                              ),
-                            ],
-                          );
-                        });
+                  onPressed: () async {
+                    await requestCollection.add({
+                      'createdBy': _auth.currentUser!.email,
+                      'topic': _topicRequestController.text,
+                      'detail': _detailRequestController.text,
+                    });
+                    Navigator.pop(context);
                   },
                   child: const Text("ส่งคำร้อง"),
                 ),
