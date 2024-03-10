@@ -93,14 +93,21 @@ class _RegisterPageState extends State<RegisterPage> {
             itemBuilder: (context, index) {
               if (_courses[index]["fix"] == 1) {
                 return ListTile(
-                  title: Text(_courses[index]["name"]),
-                  trailing: ElevatedButton(
-                    onPressed: () {
-                      // ดำเนินการลงทะเบียนเรียน
-                    },
-                    child: Text('ลงทะเบียน'),
-                  ),
-                );
+                    title: Text(_courses[index]["name"]),
+                    trailing: ElevatedButton(
+                      onPressed: () {
+                        // ดำเนินการลงทะเบียนเรียน
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromARGB(255, 51, 159, 121)),
+                      ),
+                      child: Text(
+                        'ลงทะเบียน',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
+                    );
               } else {
                 return SizedBox.shrink();
               }
@@ -127,12 +134,19 @@ class _RegisterPageState extends State<RegisterPage> {
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(_filteredCourses[index]["name"]),
-                  trailing: ElevatedButton(
-                    onPressed: () {
-                      // ดำเนินการลงทะเบียนเรียน
-                    },
-                    child: Text('ลงทะเบียน'),
-                  ),
+                     trailing: ElevatedButton(
+                      onPressed: () {
+                        // ดำเนินการลงทะเบียนเรียน
+                      },
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                            Color.fromARGB(255, 51, 159, 121)),
+                      ),
+                      child: Text(
+                        'ลงทะเบียน',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    )
                 );
               },
             ),
