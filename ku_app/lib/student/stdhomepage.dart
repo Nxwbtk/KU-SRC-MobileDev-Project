@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ku_app/student/accountpage.dart';
-import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 import 'package:ku_app/student/emptypage.dart';
 import 'package:ku_app/student/homepage.dart';
 
@@ -13,7 +12,7 @@ class StdHomePage extends StatefulWidget {
 
 class _StdHomePageState extends State<StdHomePage> {
   int _selectedIndex = 0;
-  final screen = [HomePage(), EmptyPage(), AccountPage()];
+  final screen = [const HomePage(), const EmptyPage(), const AccountPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

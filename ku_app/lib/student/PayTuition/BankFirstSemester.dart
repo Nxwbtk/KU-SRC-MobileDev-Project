@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:ku_app/student/PayTuition/QrFirstSemester.dart';
 
 class BankFirstSemester extends StatefulWidget {
+  const BankFirstSemester({super.key});
+
   @override
   _BankFirstSemesterState createState() => _BankFirstSemesterState();
 }
@@ -18,15 +19,15 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Text(
+            const Text(
               'ช่องทางการชำระเงิน',
               style: TextStyle(
                 color: Color.fromARGB(255, 14, 14, 14),
                 fontSize: 32,
               ),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'ชำระค่าเทอมกลางภาค',
               style: TextStyle(
                 color: Color.fromARGB(255, 14, 14, 14),
@@ -37,7 +38,7 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
               child: Container(
                 width: 520,
                 height: 390,
-                color: Color.fromARGB(255, 245, 242, 242),
+                color: const Color.fromARGB(255, 245, 242, 242),
                 child: Stack(
                   children: [
                     Positioned(
@@ -46,8 +47,8 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                       child: Container(
                         width: 520,
                         height: 100,
-                        color: Color.fromARGB(255, 10, 191, 94),
-                        child: Align(
+                        color: const Color.fromARGB(255, 10, 191, 94),
+                        child: const Align(
                           alignment: Alignment.center,
                           child: Text(
                             'เลือกธนาคาร',
@@ -66,10 +67,10 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                         width: 520,
                         height: 90,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 181, 246, 212),
+                          color: const Color.fromARGB(255, 181, 246, 212),
                           border: Border.all(
                             color: isChecked1
-                                ? Color.fromARGB(255, 10, 191, 94)
+                                ? const Color.fromARGB(255, 10, 191, 94)
                                 : Colors.transparent,
                             width: 2,
                           ),
@@ -77,20 +78,20 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                         ),
                         child: Row(
                           children: [
-                            SizedBox(width: 2),
+                            const SizedBox(width: 2),
                             Image.asset(
                               'assets/imgs/SCB.png',
                               width: 4,
                               height: 3,
                             ),
-                            Text(
+                            const Text(
                               'ธนาคารไทยพาณิชย์',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
                                 fontSize: 20,
                               ),
                             ),
-                            SizedBox(width: 5),
+                            const SizedBox(width: 5),
                             Checkbox(
                               value: isChecked1,
                               onChanged: (bool? newValue) {
@@ -114,10 +115,10 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                         width: 520,
                         height: 90,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 181, 246, 212),
+                          color: const Color.fromARGB(255, 181, 246, 212),
                           border: Border.all(
                             color: isChecked2
-                                ? Color.fromARGB(255, 10, 191, 94)
+                                ? const Color.fromARGB(255, 10, 191, 94)
                                 : Colors.transparent,
                             width: 2,
                           ),
@@ -125,20 +126,20 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                         ),
                         child: Row(
                           children: [
-                            SizedBox(width: 2),
+                            const SizedBox(width: 2),
                             Image.asset(
                               'assets/imgs/KB.png',
                               width: 6,
                               height: 3,
                             ),
-                            Text(
+                            const Text(
                               'ธนาคารกสิกรไทย',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
                                 fontSize: 20,
                               ),
                             ),
-                            SizedBox(width: 5),
+                            const SizedBox(width: 5),
                             Checkbox(
                               value: isChecked2,
                               onChanged: (bool? newValue) {
@@ -162,10 +163,10 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                         width: 520,
                         height: 90,
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 181, 246, 212),
+                          color: const Color.fromARGB(255, 181, 246, 212),
                           border: Border.all(
                             color: isChecked3
-                                ? Color.fromARGB(255, 10, 191, 94)
+                                ? const Color.fromARGB(255, 10, 191, 94)
                                 : Colors.transparent,
                             width: 2,
                           ),
@@ -173,20 +174,20 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                         ),
                         child: Row(
                           children: [
-                            SizedBox(width: 2),
+                            const SizedBox(width: 2),
                             Image.asset(
                               'assets/imgs/BK.png',
                               width: 9,
                               height: 3,
                             ),
-                            Text(
+                            const Text(
                               'ธนาคารกรุงเทพ',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
                                 fontSize: 20,
                               ),
                             ),
-                            SizedBox(width: 10),
+                            const SizedBox(width: 10),
                             Checkbox(
                               value: isChecked3,
                               onChanged: (bool? newValue) {
@@ -224,7 +225,7 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: Text(
+                            title: const Text(
                               "แจ้งเตือน",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 7, 7, 7),
@@ -232,7 +233,7 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                               ),
                               textAlign: TextAlign.center,
                             ),
-                            content: Text(
+                            content: const Text(
                               "กรุณาเลือก ธนาคาร ก่อน",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 241, 57, 57),
@@ -245,7 +246,7 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
-                                child: Text('ปิด'),
+                                child: const Text('ปิด'),
                               ),
                             ],
                           );
@@ -256,10 +257,10 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                    backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                    minimumSize: Size(150, 70),
+                    backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                    minimumSize: const Size(150, 70),
                   ),
-                  child: Text(
+                  child: const Text(
                     'เลือก',
                     style: TextStyle(
                       color: Colors.white,

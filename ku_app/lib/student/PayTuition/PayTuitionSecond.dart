@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter/services.dart';
 import 'package:ku_app/student/PayTuition/BankFirstSemester.dart';
 import 'package:ku_app/student/PayTuition/PayTuitionFirst.dart';
 import 'package:ku_app/student/PayTuition/information.dart';
@@ -13,9 +12,10 @@ class PayTuitionSecond extends StatefulWidget {
 }
 
 class _PayTuitionSecondState extends State<PayTuitionSecond> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,7 +25,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     'การเงินนิสิต',
                     style: TextStyle(
                       color: Color.fromARGB(255, 14, 14, 14),
@@ -37,7 +37,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                     children: [
                       Text(
                         DateFormat.yMMMMd().format(DateTime.now()),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color.fromARGB(255, 10, 191, 94),
                         ),
                       ),
@@ -52,7 +52,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                     child: Container(
                       width: 500,
                       height: 350,
-                      color: Color.fromARGB(255, 245, 242, 242),
+                      color: const Color.fromARGB(255, 245, 242, 242),
                       child: Stack(
                         children: [
                           Positioned(
@@ -61,10 +61,10 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                             child: Container(
                               width: 110,
                               height: 150,
-                              color: Color.fromARGB(255, 10, 191, 94),
-                              child: Align(
+                              color: const Color.fromARGB(255, 10, 191, 94),
+                              child: const Align(
                                 alignment: Alignment.center,
-                                child: const Text(
+                                child: Text(
                                   'กลางภาค',
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 237, 239, 238),
@@ -80,42 +80,42 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                             child: Container(
                               width: 490,
                               height: 150,
-                              color: Color.fromRGBO(251, 252, 252, 1),
+                              color: const Color.fromRGBO(251, 252, 252, 1),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  SizedBox(height: 20),
+                                  const SizedBox(height: 20),
                                   Row(
                                     children: [
-                                      SizedBox(width: 20),
-                                      Text(
+                                      const SizedBox(width: 20),
+                                      const Text(
                                         'ยอดรอการชำระ',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 24,
                                         ),
                                       ),
-                                      SizedBox(width: 125),
+                                      const SizedBox(width: 125),
                                       IconButton(
                                         onPressed: () {
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    information()),
+                                                    const information()),
                                           );
                                         },
-                                        icon: Icon(
+                                        icon: const Icon(
                                           Icons.insert_drive_file,
-                                          color: const Color.fromARGB(
+                                          color: Color.fromARGB(
                                               255, 9, 9, 9),
                                           size: 50,
                                         ),
                                       ),
-                                      SizedBox(width: 20),
+                                      const SizedBox(width: 20),
                                     ],
                                   ),
-                                  Row(
+                                  const Row(
                                     children: [
                                       SizedBox(width: 30),
                                       Text(
@@ -145,20 +145,20 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                             child: Container(
                               width: 500,
                               height: 65,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color.fromRGBO(251, 252, 252, 1),
                                 border: Border(
                                   top: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                   bottom: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                 ),
                               ),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
@@ -192,20 +192,20 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                             child: Container(
                               width: 500,
                               height: 70,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: Color.fromRGBO(251, 252, 252, 1),
                                 border: Border(
                                   top: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                   bottom: BorderSide(
                                       width: 1,
-                                      color: const Color.fromARGB(
+                                      color: Color.fromARGB(
                                           255, 206, 206, 206)),
                                 ),
                               ),
-                              child: Column(
+                              child: const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
@@ -240,27 +240,27 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                             child: Container(
                               width: 500,
                               height: 70,
-                              color: Color.fromRGBO(251, 252, 252, 1),
+                              color: const Color.fromRGBO(251, 252, 252, 1),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Row(
                                     children: [
-                                      SizedBox(width: 120),
-                                      SizedBox(height: 60),
-                                      Text(
+                                      const SizedBox(width: 120),
+                                      const SizedBox(height: 60),
+                                      const Text(
                                         'ชำระได้ถึงวันที่',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 0, 0, 0),
                                           fontSize: 18,
                                         ),
                                       ),
-                                      SizedBox(width: 10),
+                                      const SizedBox(width: 10),
                                       Text(
                                         DateFormat.yMMMMd().format(
                                             DateTime.now()
-                                                .add(Duration(days: 30))),
-                                        style: TextStyle(
+                                                .add(const Duration(days: 30))),
+                                        style: const TextStyle(
                                           color:
                                               Color.fromARGB(255, 247, 17, 5),
                                         ),
@@ -291,16 +291,16 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BankFirstSemester()),
+                                builder: (context) => const BankFirstSemester()),
                           );
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                          minimumSize: Size(150, 70),
+                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: const Size(150, 70),
                         ),
-                        child: Text(
+                        child: const Text(
                           'เลือกรูปแบบ',
                           style: TextStyle(
                             color: Colors.white,
@@ -313,13 +313,13 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                   const SizedBox(
                     height: 100,
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 10,
                       ),
                     ],
@@ -330,7 +330,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(255, 236, 234, 234),
+      backgroundColor: const Color.fromARGB(255, 236, 234, 234),
     );
   }
 }
@@ -353,25 +353,25 @@ class _DropdownExampleState extends State<DropdownExample> {
 
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => PayTuitionFirst()),
+            MaterialPageRoute(builder: (context) => const PayTuitionFirst()),
           );
         });
       },
-      dropdownColor: Color.fromARGB(255, 248, 249, 249),
-      style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
+      dropdownColor: const Color.fromARGB(255, 248, 249, 249),
+      style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
       items: <String>['ภาคต้น', 'ภาคปลาย']
           .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
           child: Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Color.fromARGB(255, 10, 191, 94),
+              color: const Color.fromARGB(255, 10, 191, 94),
             ),
             child: Text(
               value,
-              style: TextStyle(color: Color.fromARGB(255, 251, 250, 250)),
+              style: const TextStyle(color: Color.fromARGB(255, 251, 250, 250)),
             ),
           ),
         );

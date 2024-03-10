@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:ku_app/student/services/map.dart';
+import 'package:ku_app/student/services/request_page.dart';
 import 'package:ku_app/student/services/reserv_place.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -103,7 +104,9 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("บริการสำหรับนิสิต", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  const Text("บริการสำหรับนิสิต",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -116,13 +119,17 @@ class _HomePageState extends State<HomePage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.map),
-                                  Text("การจองสถานที่"),
+                                  Text("จองสถานที่"),
                                 ],
                               ),
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const ReservePlaceService()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const ReservePlaceService()));
                           },
                         ),
                       ),
@@ -141,7 +148,10 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const MapPage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const MapPage()));
                           },
                         ),
                       ),
@@ -165,7 +175,25 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: const Text("ขออภัย"),
+                                    content:
+                                        const Text("ขณะนี้ไม่อยู่ในเวลาทำการ"),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop();
+                                        },
+                                        child: const Text("ยืนยัน"),
+                                      ),
+                                    ],
+                                  );
+                                });
+                          },
                         ),
                       ),
                       Expanded(
@@ -177,12 +205,14 @@ class _HomePageState extends State<HomePage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Icon(Icons.headset),
-                                  Text("การจองสถานที่"),
+                                  Text("ส่งคำร้อง/แจ้งปัญหา"),
                                 ],
                               ),
                             ),
                           ),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => const RequestPage()));
+                          },
                         ),
                       ),
                     ],
