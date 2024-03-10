@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 
 class information extends StatefulWidget {
+  const information({super.key});
+
   @override
   _informationState createState() => _informationState();
 }
@@ -13,7 +14,7 @@ class _informationState extends State<information> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -36,16 +37,16 @@ class _informationState extends State<information> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PayTuitionSecond()),
+                                builder: (context) => const PayTuitionSecond()),
                           );
                         },
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                          minimumSize: Size(150, 70),
+                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: const Size(150, 70),
                         ),
-                        child: Text(
+                        child: const Text(
                           'หน้าหลัก',
                           style: TextStyle(
                             color: Colors.white,

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:ku_app/main.dart';
 
 
 class QrFirstSemester extends StatefulWidget {
+  const QrFirstSemester({super.key});
+
   @override
   _QrFirstSemesterState createState() => _QrFirstSemesterState();
 }
@@ -12,7 +13,7 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,7 +27,7 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                     child: Container(
                       width: 500,
                       height: 400,
-                      color: Color.fromARGB(255, 245, 242, 242),
+                      color: const Color.fromARGB(255, 245, 242, 242),
                       child: Stack(
                         children: [
                           Positioned(
@@ -35,10 +36,10 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                             child: Container(
                               width: 325,
                               height: 250,
-                              color: Color.fromARGB(255, 10, 191, 94),
-                              child: Align(
+                              color: const Color.fromARGB(255, 10, 191, 94),
+                              child: const Align(
                                 alignment: Alignment.center,
-                                child: const Text(
+                                child: Text(
                                   'QR',
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 237, 239, 238),
@@ -54,20 +55,20 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                             child: Container(
                               width: 325,
                               height: 85,
-                              color: Color.fromARGB(255, 252, 252, 252),
-                              child: Align(
+                              color: const Color.fromARGB(255, 252, 252, 252),
+                              child: const Align(
                                 alignment: Alignment.center,
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    const Text(
+                                    Text(
                                       'ยอดเงินรวมทั้งหมด  18200.00  บาท',
                                       style: TextStyle(
                                         color: Color.fromARGB(255, 12, 12, 12),
                                         fontSize: 20,
                                       ),
                                     ),
-                                    const Text(
+                                    Text(
                                       '(สแกนเพื่อชำระค่าเทอม)',
                                       style: TextStyle(
                                         color: Color.fromARGB(255, 240, 38, 38),
@@ -93,14 +94,14 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                           {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => MyApp()),
+                              MaterialPageRoute(builder: (context) => const MyApp()),
                             );
 
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertDialog(
-                                  title: Text(
+                                  title: const Text(
                                     "ชำระสำเร็จแล้ว",
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 60, 239, 5),
@@ -108,7 +109,7 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                                     ),
                                     textAlign: TextAlign.center,
                                   ),
-                                  content: Text(
+                                  content: const Text(
                                     "กรุณา กดปุ่มยืนยันเพื่อกลับไปหน้าหลัก",
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 0, 0, 0),
@@ -121,7 +122,7 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                                       onPressed: () {
                                         Navigator.of(context).pop();
                                       },
-                                      child: Text('ยืนยัน'),
+                                      child: const Text('ยืนยัน'),
                                     ),
                                   ],
                                 );
@@ -132,10 +133,10 @@ class _QrFirstSemesterState extends State<QrFirstSemester> {
                         style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
                           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Color.fromARGB(255, 11, 158, 249),
-                          minimumSize: Size(150, 70),
+                          backgroundColor: const Color.fromARGB(255, 11, 158, 249),
+                          minimumSize: const Size(150, 70),
                         ),
-                        child: Text(
+                        child: const Text(
                           'ชำระแล้ว',
                           style: TextStyle(
                             color: Colors.white,
