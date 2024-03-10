@@ -1,10 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:ku_app/check_role_page.dart';
-=======
 import '../../check_role_page.dart';
->>>>>>> Pay-tuition
 import 'package:ku_app/loginpage.dart';
 
 class CheckSignInPage extends StatelessWidget {
