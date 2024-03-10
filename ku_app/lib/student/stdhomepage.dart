@@ -7,7 +7,7 @@ import 'package:ku_app/student/planpage.dart';
 import 'package:ku_app/student/profile.dart';
 import 'package:ku_app/student/register.dart';
 import 'package:ku_app/student/schedule.dart';
-import 'package:ku_app/student/status.dart';
+//import 'package:ku_app/student/status.dart';
 
 class StdHomePage extends StatefulWidget {
   const StdHomePage({super.key});
@@ -25,7 +25,7 @@ class _StdHomePageState extends State<StdHomePage> {
     ProfilePage(),
     PlanPage(),
     RegisterPage(),
-    StatusPage(),
+    //StatusPage(),
     SchedulePage(),
     SettingsPage(),
   ];
@@ -84,8 +84,16 @@ class _StdHomePageState extends State<StdHomePage> {
                   });
                 },
               ),
-              ListTile(
+              /*ListTile(
                 title: const Text('Status'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 5;
+                  });
+                },
+              ),*/
+              ListTile(
+                title: const Text('ตารางเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 5;
@@ -93,18 +101,10 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('ตารางเรียน'),
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 6;
-                  });
-                },
-              ),
-              ListTile(
                 title: const Text('Settings'),
                 onTap: () {
                   setState(() {
-                    _selectedIndex = 7;
+                    _selectedIndex = 6;
                   });
                 },
               )
