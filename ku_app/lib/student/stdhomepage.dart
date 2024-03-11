@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ku_app/student/planpage.dart';
 import 'package:ku_app/student/register.dart';
 import 'package:ku_app/student/schedule.dart';
-import 'package:ku_app/student/Grade.dart';
-import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
+import 'package:ku_app/student/grade.dart';
+import 'package:ku_app/student/PayTuition/pay_tuition_second.dart';
 import 'package:ku_app/student/accountpage.dart';
 import 'package:ku_app/student/homepage.dart';
 

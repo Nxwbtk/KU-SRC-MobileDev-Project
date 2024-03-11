@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ku_app/student/PayTuition/QrFirstSemester.dart';
+import 'package:ku_app/student/PayTuition/qr_first_semester.dart';
 
 class BankFirstSemester extends StatefulWidget {
   const BankFirstSemester({super.key});
 
   @override
-  _BankFirstSemesterState createState() => _BankFirstSemesterState();
+  State<BankFirstSemester> createState() => _BankFirstSemesterState();
 }
 
 class _BankFirstSemesterState extends State<BankFirstSemester> {

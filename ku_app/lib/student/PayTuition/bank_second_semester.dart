@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ku_app/student/PayTuition/QrSecondSemester.dart';
+import 'package:ku_app/student/PayTuition/qr_second_semester.dart';
 
 class BankSecondSemester extends StatefulWidget {
   const BankSecondSemester({super.key});

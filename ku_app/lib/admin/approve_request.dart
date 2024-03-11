@@ -147,8 +147,8 @@ class _ApproveRequestPageState extends State<ApproveRequestPage> {
                     ],
                   )
                 : data['status'] == -1
-                    ? Text("คำร้องนี้ถูกปฏิเสธแล้ว")
-                    : Text("คำร้องนี้ได้รับการอนุมัติแล้ว"),
+                    ? const Text("คำร้องนี้ถูกปฏิเสธแล้ว")
+                    : const Text("คำร้องนี้ได้รับการอนุมัติแล้ว"),
           ],
         ),
       ),
