@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ku_app/admin/admin_post_news.dart';
 import 'package:ku_app/admin/admin_register_acc.dart';
 import 'package:ku_app/admin/manage_std_request.dart';
 
@@ -43,19 +44,27 @@ class _AdminMainPageState extends State<AdminMainPage> {
                   ),
                 ),
               ),
-              const Card(
-                child: SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.newspaper,
-                        size: 50,
-                      ),
-                      Text('สร้างบทความ'),
-                    ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PostNewsPage()));
+                },
+                child: const Card(
+                  child: SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.newspaper,
+                          size: 50,
+                        ),
+                        Text('บทความ'),
+                      ],
+                    ),
                   ),
                 ),
               ),

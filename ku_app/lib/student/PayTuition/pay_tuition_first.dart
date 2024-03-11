@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:ku_app/student/PayTuition/BankSecondSemester.dart';
-import 'package:ku_app/student/PayTuition/PayTuitionFirst.dart';
+import 'package:ku_app/student/PayTuition/bank_first_semester.dart';
+import 'package:ku_app/student/PayTuition/pay_tuition_second.dart';
 import 'package:ku_app/student/PayTuition/information.dart';
 
-class PayTuitionSecond extends StatefulWidget {
-  const PayTuitionSecond({super.key});
+class PayTuitionFirst extends StatefulWidget {
+  const PayTuitionFirst({super.key});
 
   @override
-  State<PayTuitionSecond> createState() => _PayTuitionSecondState();
+  State<PayTuitionFirst> createState() => _PayTuitionFirstState();
 }
 
-class _PayTuitionSecondState extends State<PayTuitionSecond> {
+class _PayTuitionFirstState extends State<PayTuitionFirst> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,12 +41,10 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                         ),
                       ),
                       const SizedBox(width: 10),
-                      const DropdownExample(),
+                      const DropdownExample2(),
                     ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   Center(
                     child: Container(
                       width: 380,
@@ -64,7 +62,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               child: const Align(
                                 alignment: Alignment.center,
                                 child: Text(
-                                  'กลางภาค',
+                                  'ปลายภาค',
                                   style: TextStyle(
                                     color: Color.fromARGB(255, 237, 239, 238),
                                     fontSize: 16,
@@ -117,7 +115,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                     children: [
                                       SizedBox(width: 30),
                                       Text(
-                                        '17,900.00',
+                                        '18,200.00',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 14,
@@ -172,7 +170,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                       ),
                                       SizedBox(width: 70),
                                       Text(
-                                        '17,900.00',
+                                        '18,200.00',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 14,
@@ -220,7 +218,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                                       ),
                                       SizedBox(width: 120),
                                       Text(
-                                        '17,900.00',
+                                        '18,200.00',
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 7, 7, 7),
                                           fontSize: 16,
@@ -281,7 +279,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                               ),
                             ),
                           ),
-                          Container(
+                          const SizedBox(
                             width: 380,
                             height: 219,
                           ),
@@ -289,19 +287,18 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 30,
-                  ),
+                  const SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 20),
                       TextButton(
                         onPressed: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => const BankSecondSemester()),
+                                builder: (context) =>
+                                    const BankFirstSemester()),
                           );
                         },
                         style: TextButton.styleFrom(
@@ -341,20 +338,20 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
           ],
         ),
       ),
-      backgroundColor: const Color.fromARGB(255, 236, 234, 234),
+      backgroundColor: const Color.fromARGB(255, 241, 240, 240),
     );
   }
 }
 
-class DropdownExample extends StatefulWidget {
-  const DropdownExample({super.key});
+class DropdownExample2 extends StatefulWidget {
+  const DropdownExample2({super.key});
 
   @override
-  State<DropdownExample> createState() => _DropdownExampleState();
+  State<DropdownExample2> createState() => _DropdownExampleState2();
 }
 
-class _DropdownExampleState extends State<DropdownExample> {
-  String selectedRegion = 'ภาคต้น';
+class _DropdownExampleState2 extends State<DropdownExample2> {
+  String selectedRegion = 'ภาคปลาย';
 
   @override
   Widget build(BuildContext context) {
@@ -366,7 +363,7 @@ class _DropdownExampleState extends State<DropdownExample> {
 
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => const PayTuitionFirst()),
+            MaterialPageRoute(builder: (context) => const PayTuitionSecond()),
           );
         });
       },

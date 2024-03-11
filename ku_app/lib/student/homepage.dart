@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:ku_app/student/services/map.dart';
 import 'package:ku_app/student/services/request_page.dart';
 import 'package:ku_app/student/services/reserv_place.dart';
+import 'package:ku_app/student/view_blog.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +15,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  CollectionReference blogCollection =
+      FirebaseFirestore.instance.collection('admin_blog');
   final carouselImg = [
     "https://pbs.twimg.com/media/GBnKNRraIAA_ity?format=jpg&name=large",
     "https://scontent.fbkk5-7.fna.fbcdn.net/v/t39.30808-6/428708214_901306895125740_326121659884883406_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeF1mK9nTbNZ0a872JweKGp1wQZ0BZ9rBXLBBnQFn2sFckF0sT_CeSIrxdsPwPm_2xBRR2xHDh45X0SSWJY8HwIT&_nc_ohc=klqSd-06Z8kAX9zIAP1&_nc_ht=scontent.fbkk5-7.fna&oh=00_AfDrqfnk7udb_w088QSpbH0yDbq74KUVlHoEH4yQRK3kmw&oe=65F0D732",
@@ -76,25 +80,39 @@ class _HomePageState extends State<HomePage> {
                 border: Border.all(color: Colors.black),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: const Column(
+              child: Column(
                 children: [
-                  Align(
+                  const Align(
                       alignment: Alignment.center,
                       child: Text("ข่าวสารนิสิต",
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold))),
-                  ListTile(
-                    title: Text("ข่าวสาร 1"),
-                    subtitle: Text("รายละเอียดข่าวสาร 1"),
-                  ),
-                  ListTile(
-                    title: Text("ข่าวสาร 2"),
-                    subtitle: Text("รายละเอียดข่าวสาร 2"),
-                  ),
-                  ListTile(
-                    title: Text("ข่าวสาร 3"),
-                    subtitle: Text("รายละเอียดข่าวสาร 3"),
-                  ),
+                  StreamBuilder(
+                      stream: blogCollection.snapshots(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: snapshot.data!.docs.length < 10 ? snapshot.data!.docs.length : 10,
+                              itemBuilder: (context, index) {
+                                DocumentSnapshot data =
+                                    snapshot.data!.docs[index];
+                                return Card(
+                                  child: ListTile(
+                                    title: Text(data['title'],
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold)),
+                                    subtitle: Text(data['detail']),
+                                    onTap: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const ViewBlogPage(), settings: RouteSettings(arguments: data)));
+                                    },
+                                  ),
+                                );
+                              });
+                        } else {
+                          return const SizedBox();
+                        }
+                      })
                 ],
               ),
             ),
@@ -211,7 +229,10 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const RequestPage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const RequestPage()));
                           },
                         ),
                       ),
