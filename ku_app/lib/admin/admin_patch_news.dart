@@ -57,6 +57,7 @@ class _PatchNewsFormState extends State<PatchNewsForm> {
                   'createdDate': DateTime.now(),
                   'createdBy': _auth.currentUser!.email,
                 });
+                // ignore: use_build_context_synchronously
                 await showDialog(
                     context: context,
                     builder: (context) {
@@ -72,6 +73,7 @@ class _PatchNewsFormState extends State<PatchNewsForm> {
                         ],
                       );
                     });
+                // ignore: use_build_context_synchronously
                 Navigator.pop(context);
               },
               child: const Text('บันทึก'),

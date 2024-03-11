@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class GradePage extends StatefulWidget {
@@ -57,7 +59,7 @@ class _GradePage extends State<GradePage> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.green[800]),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   "Cumulative Units: 39",
                   style: TextStyle(

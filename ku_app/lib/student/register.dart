@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:flutter/material.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -82,7 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'รายวิชาบังคับ',
             style: TextStyle(fontSize: 30, color: Colors.black),
           ),
@@ -96,7 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     trailing: ElevatedButton(
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text('ขออภัยยังไม่สามารถใช้งานได้'),
                           ),
                         );
@@ -105,17 +107,17 @@ class _RegisterPageState extends State<RegisterPage> {
                         backgroundColor: MaterialStateProperty.all<Color>(
                             Colors.green[800]!),
                       ),
-                      child: Text(
+                      child: const Text(
                         'ลงทะเบียน',
                         style: TextStyle(color: Colors.white),
                       ),
                     ));
               } else {
-                return SizedBox.shrink();
+                return const SizedBox.shrink();
               }
             },
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           TextField(
             onChanged: (value) {
               setState(() {
@@ -124,11 +126,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     .toList();
               });
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'ค้นหาวิชาเรียน',
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
               itemCount: _filteredCourses.length,
@@ -138,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     trailing: ElevatedButton(
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text('ขออภัยยังไม่สามารถใช้งานได้'),
                           ),
                         );
@@ -147,7 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         backgroundColor: MaterialStateProperty.all<Color>(
                             Colors.green[800]!),
                       ),
-                      child: Text(
+                      child: const Text(
                         'ลงทะเบียน',
                         style: TextStyle(color: Colors.white),
                       ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SchedulePage extends StatefulWidget {
-  const SchedulePage({Key? key}) : super(key: key);
+  const SchedulePage({super.key});
 
   @override
   State<SchedulePage> createState() => _SchedulePageState();
 }
 
 class _SchedulePageState extends State<SchedulePage> {
-  List<Map<String, dynamic>> _courses = [
+  final List<Map<String, dynamic>> _courses = [
     {
       "name": 'Database Systems',
       "day": 3,
@@ -81,7 +81,7 @@ class _SchedulePageState extends State<SchedulePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           // แสดงตารางเรียน
           Expanded(
             child: ListView.builder(
@@ -120,26 +120,26 @@ class _SchedulePageState extends State<SchedulePage> {
                     Text(
                       dayName,
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     if (coursesOfDay.isNotEmpty)
                       ListView.builder(
                         shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         itemCount: coursesOfDay.length,
                         itemBuilder: (context, index) {
                           return ListTile(
                             title: Text(coursesOfDay[index]["name"]),
                             trailing: Text(
                               coursesOfDay[index]["time"],
-                              style: TextStyle(fontSize: 16),
+                              style: const TextStyle(fontSize: 16),
                             ),
                           );
                         },
                       ),
                     if (coursesOfDay.isEmpty)
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 8.0),
                         child: Text(
                           'ไม่มีวิชา',
                           style: TextStyle(color: Colors.grey),
