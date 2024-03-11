@@ -39,21 +39,13 @@ class _StdHomePageState extends State<StdHomePage> {
             padding: EdgeInsets.zero,
             children: [
               Container(
-                height: 100,
+                height: 50,
               ),
               ListTile(
                 title: const Text('หน้าหลัก'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 0;
-                  });
-                },
-              ),
-              ListTile(
-                title: const Text('บัญชีของคุณ'),
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 1;
                   });
                 },
               ),
@@ -94,6 +86,14 @@ class _StdHomePageState extends State<StdHomePage> {
                 onTap: () {
                   setState(() {
                     _selectedIndex = 6;
+                  });
+                },
+              ),
+              ListTile(
+                title: const Text('บัญชีของคุณ'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 1;
                   });
                 },
               ),
