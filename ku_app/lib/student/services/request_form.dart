@@ -63,6 +63,7 @@ class _RequestFormState extends State<RequestForm> {
                       'createdBy': _auth.currentUser!.email,
                       'topic': _topicRequestController.text,
                       'detail': _detailRequestController.text,
+                      'status': 0,
                     });
                     Navigator.pop(context);
                   },

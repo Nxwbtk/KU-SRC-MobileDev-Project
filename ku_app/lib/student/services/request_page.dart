@@ -34,9 +34,12 @@ class _RequestPageState extends State<RequestPage> {
                 DocumentSnapshot request = snapshot.data!.docs[index];
                 if (request['createdBy'] == _auth.currentUser!.email) {
                   return Card(
+                    color: request['status'] == 0 ? Colors.teal[100] : request['status'] == -1 ? Colors.red : Colors.green,
                     child: ListTile(
-                      title: Text(request['topic']),
-                      subtitle: Text(request['detail']),
+                      // ignore: prefer_interpolation_to_compose_strings
+                      title: Text("หัวข้อ: " + request['topic'], style: const TextStyle(fontWeight: FontWeight.bold)),
+                      // ignore: prefer_interpolation_to_compose_strings
+                      subtitle: Text("รายละเอียด: " + (request['detail'].length > 20 ? request['detail'].substring(0, 20) + '...' : request['detail']),),
                       onLongPress: () {
                         showDialog(
                             context: context,
@@ -67,8 +70,12 @@ class _RequestPageState extends State<RequestPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    const ViewEditRequestPage()));
+                                builder: (context) => const ViewEditRequestPage(),
+                                settings: RouteSettings(
+                                  arguments: request
+                                )
+                              )
+                            );
                       },
                     ),
                   );
