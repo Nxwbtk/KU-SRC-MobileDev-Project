@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class GradePage extends StatefulWidget {
-  const GradePage({Key? key}) : super(key: key);
+  const GradePage({super.key});
 
   @override
-  State<GradePage> createState() => _GradePageState();
+  State<GradePage> createState() => _GradePage();
 }
 
-class _GradePageState extends State<GradePage> {
+class _GradePage extends State<GradePage> {
   // Sample data for demonstration
   List<String> subjectsTerm1 = [
     "01418331 4 หน่วยกิต ระบบปฏิบัติการ | D+ ",

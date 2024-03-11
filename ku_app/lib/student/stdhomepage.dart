@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ku_app/student/Grade.dart';
 import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
 import 'package:ku_app/student/accountpage.dart';
 import 'package:ku_app/student/emptypage.dart';
@@ -13,7 +14,7 @@ class StdHomePage extends StatefulWidget {
 
 class _StdHomePageState extends State<StdHomePage> {
   int _selectedIndex = 0;
-  final screen = [const HomePage(), const PayTuitionSecond(), const EmptyPage(), const AccountPage()];
+  final screen = [const HomePage(), const PayTuitionSecond(), const EmptyPage(), const AccountPage(), const GradePage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +56,14 @@ class _StdHomePageState extends State<StdHomePage> {
                 title: const Text('Settings'),
                 onTap: () {
                   Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                title: const Text('Grade'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 4;
+                  });
                 },
               ),
               ListTile(
