@@ -50,7 +50,7 @@ class _GradePage extends State<GradePage> {
               border: Border.all(color: Colors.green[800]!),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Column(
+            child:  Column(
               children: [
                 Text(
                   "Cumulative GPA: 2.68",
