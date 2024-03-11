@@ -60,7 +60,7 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
                             child: Container(
                               width: 90,
                               height: 100,
-                              color: const Color.fromARGB(255, 10, 191, 94),
+                              color: Colors.green[800],
                               child: const Align(
                                 alignment: Alignment.center,
                                 child: Text(
@@ -380,7 +380,7 @@ class _DropdownExampleState extends State<DropdownExample> {
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: const Color.fromARGB(255, 10, 191, 94),
+              color: Colors.green[800],
             ),
             child: Text(
               value,

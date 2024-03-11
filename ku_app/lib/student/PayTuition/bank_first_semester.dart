@@ -42,7 +42,7 @@ class _BankFirstSemesterState extends State<BankFirstSemester> {
                       child: Container(
                         width: 380,
                         height: 100,
-                        color: const Color.fromARGB(255, 10, 191, 94),
+                        color: Colors.green[800],
                         child: const Align(
                           alignment: Alignment.center,
                           child: Text(

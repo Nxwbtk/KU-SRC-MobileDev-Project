@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class GradePage extends StatefulWidget {
@@ -39,7 +41,6 @@ class _GradePage extends State<GradePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Grade Page")),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -48,21 +49,21 @@ class _GradePage extends State<GradePage> {
             margin: const EdgeInsets.only(top: 16),
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.green),
+              border: Border.all(color: Colors.green[800]!),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Column(
+            child:  Column(
               children: [
                 Text(
                   "Cumulative GPA: 2.68",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.green),
+                      fontWeight: FontWeight.bold, color: Colors.green[800]),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
                   "Cumulative Units: 39",
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.green),
+                      fontWeight: FontWeight.bold, color: Colors.green[800]),
                 ),
               ],
             ),
@@ -89,7 +90,7 @@ class _GradePage extends State<GradePage> {
               itemBuilder: (context, index) {
                 return ListTile(
                   title: Text(subjectsTerm1[index]),
-                );
+                ); 
               },
             ),
           ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ku_app/student/planpage.dart';
+import 'package:ku_app/student/register.dart';
+import 'package:ku_app/student/schedule.dart';
 import 'package:ku_app/student/grade.dart';
 import 'package:ku_app/student/PayTuition/pay_tuition_second.dart';
 import 'package:ku_app/student/accountpage.dart';
@@ -13,11 +16,15 @@ class StdHomePage extends StatefulWidget {
 
 class _StdHomePageState extends State<StdHomePage> {
   int _selectedIndex = 0;
+
   final screen = [
     const HomePage(),
+    const AccountPage(),
     const PayTuitionSecond(),
     const GradePage(),
-    const AccountPage()
+    const PlanPage(),
+    const RegisterPage(),
+    const SchedulePage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -43,7 +50,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('ชำระค่าเทอม'),
+                title: const Text('บัญชีของคุณ'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 1;
@@ -51,7 +58,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('ผลการเรียน'),
+                title: const Text('ชำระค่าเทอม'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 2;
@@ -59,10 +66,34 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('บัญชีของคุณ'),
+                title: const Text('ผลการเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 3;
+                  });
+                },
+              ),
+              ListTile(
+                title: const Text('แผนการเรียน'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 4;
+                  });
+                },
+              ),
+              ListTile(
+                title: const Text('ลงทะเบียนเรียน'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 5;
+                  });
+                },
+              ),
+              ListTile(
+                title: const Text('ตารางเรียน'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 6;
                   });
                 },
               ),

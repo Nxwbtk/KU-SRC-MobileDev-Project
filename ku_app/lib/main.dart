@@ -8,8 +8,7 @@ void main() async {
   runZonedGuarded<Future<void>>(() async {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform
-    );
+        options: DefaultFirebaseOptions.currentPlatform);
   }, (error, stack) {});
   runApp(const MyApp());
 }
@@ -24,8 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: FutureBuilder(
         future: Firebase.initializeApp(
-            options: DefaultFirebaseOptions.currentPlatform
-        ),
+            options: DefaultFirebaseOptions.currentPlatform),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             return const CheckSignInPage();
