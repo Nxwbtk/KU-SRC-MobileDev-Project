@@ -90,19 +90,19 @@ class _SchedulePageState extends State<SchedulePage> {
                 String dayName = '';
                 switch (dayIndex) {
                   case 0:
-                    dayName = 'Monday';
+                    dayName = 'วันจันทร์';
                     break;
                   case 1:
-                    dayName = 'Tuesday';
+                    dayName = 'วันอังคาร';
                     break;
                   case 2:
-                    dayName = 'Wednesday';
+                    dayName = 'วันพุธ';
                     break;
                   case 3:
-                    dayName = 'Thursday';
+                    dayName = 'วันพฤหัสบดี';
                     break;
                   case 4:
-                    dayName = 'Friday';
+                    dayName = 'วันศุกร์';
                     break;
                   default:
                     dayName = 'Unknown';
