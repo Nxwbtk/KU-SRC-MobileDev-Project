@@ -100,7 +100,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromARGB(255, 51, 159, 121)),
+                            Colors.green[800]!),
                       ),
                       child: Text(
                         'ลงทะเบียน',
@@ -140,7 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromARGB(255, 51, 159, 121)),
+                            Colors.green[800]!),
                       ),
                       child: Text(
                         'ลงทะเบียน',

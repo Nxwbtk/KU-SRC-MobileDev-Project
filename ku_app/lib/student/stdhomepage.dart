@@ -1,13 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:ku_app/student/Settings.dart';
-import 'package:ku_app/student/emptypage.dart';
-import 'package:ku_app/student/home.dart';
 import 'package:ku_app/student/planpage.dart';
-import 'package:ku_app/student/profile.dart';
 import 'package:ku_app/student/register.dart';
 import 'package:ku_app/student/schedule.dart';
-//import 'package:ku_app/student/status.dart';
+import 'package:ku_app/student/Grade.dart';
+import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
+import 'package:ku_app/student/accountpage.dart';
+import 'package:ku_app/student/homepage.dart';
 
 class StdHomePage extends StatefulWidget {
   const StdHomePage({super.key});
@@ -20,21 +18,20 @@ class _StdHomePageState extends State<StdHomePage> {
   int _selectedIndex = 0;
 
   final screen = [
-    EmptyPage(),
-    HomePage(),
-    ProfilePage(),
-    PlanPage(),
-    RegisterPage(),
-    //StatusPage(),
-    SchedulePage(),
-    SettingsPage(),
+    const HomePage(),
+    const AccountPage(),
+    const PayTuitionSecond(),
+    const GradePage(),
+    const PlanPage(),
+    const RegisterPage(),
+    const SchedulePage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Nisit KU'),
-        backgroundColor: Colors.grey[100],
+        title: const Text('Nisit KU V.2'),
+        backgroundColor: Colors.green[800],
       ),
       endDrawer: Drawer(
         child: SafeArea(
@@ -45,15 +42,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 height: 100,
               ),
               ListTile(
-                title: const Text('Home'),
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 1;
-                  });
-                },
-              ),
-              ListTile(
-                title: const Text('Logout Page'),
+                title: const Text('หน้าหลัก'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 0;
@@ -61,7 +50,15 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('Profile'),
+                title: const Text('บัญชีของคุณ'),
+                onTap: () {
+                  setState(() {
+                    _selectedIndex = 1;
+                  });
+                },
+              ),
+              ListTile(
+                title: const Text('ชำระค่าเทอม'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 2;
@@ -69,7 +66,7 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('แผนการเรียน'),
+                title: const Text('ผลการเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 3;
@@ -77,23 +74,15 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('ลงทะเบียนเรียน'),
+                title: const Text('แผนการเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 4;
                   });
                 },
               ),
-              /*ListTile(
-                title: const Text('Status'),
-                onTap: () {
-                  setState(() {
-                    _selectedIndex = 5;
-                  });
-                },
-              ),*/
               ListTile(
-                title: const Text('ตารางเรียน'),
+                title: const Text('ลงทะเบียนเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 5;
@@ -101,13 +90,13 @@ class _StdHomePageState extends State<StdHomePage> {
                 },
               ),
               ListTile(
-                title: const Text('Settings'),
+                title: const Text('ตารางเรียน'),
                 onTap: () {
                   setState(() {
                     _selectedIndex = 6;
                   });
                 },
-              )
+              ),
             ],
           ),
         ),
