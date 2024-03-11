@@ -108,7 +108,6 @@ class _SchedulePageState extends State<SchedulePage> {
                     dayName = 'Unknown';
                 }
 
-                // กรองรายวิชาให้เฉพาะที่เป็นวันนี้ และมีสถานะเป็น 'pass'
                 final coursesOfDay = _courses
                     .where((course) =>
                         course["day"] == dayIndex + 1 &&

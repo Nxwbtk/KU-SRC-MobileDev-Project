@@ -86,17 +86,20 @@ class _RegisterPageState extends State<RegisterPage> {
             'รายวิชาบังคับ',
             style: TextStyle(fontSize: 30, color: Colors.black),
           ),
-          // แสดงรายการวิชาที่เป็นวิชาบังคับ
           ListView.builder(
             shrinkWrap: true,
-            itemCount: _courses.length, // จำนวนวิชาบังคับ
+            itemCount: _courses.length, 
             itemBuilder: (context, index) {
               if (_courses[index]["fix"] == 1) {
                 return ListTile(
                     title: Text(_courses[index]["name"]),
                     trailing: ElevatedButton(
                       onPressed: () {
-                        // ดำเนินการลงทะเบียนเรียน
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('ขออภัยยังไม่สามารถใช้งานได้'),
+                          ),
+                        );
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
@@ -106,8 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         'ลงทะเบียน',
                         style: TextStyle(color: Colors.white),
                       ),
-                    )
-                    );
+                    ));
               } else {
                 return SizedBox.shrink();
               }
@@ -116,7 +118,6 @@ class _RegisterPageState extends State<RegisterPage> {
           SizedBox(height: 20),
           TextField(
             onChanged: (value) {
-              // ทำการค้นหาวิชาที่ตรงกับคำค้นหา
               setState(() {
                 _filteredCourses = _courses
                     .where((course) => course["name"].contains(value))
@@ -133,10 +134,14 @@ class _RegisterPageState extends State<RegisterPage> {
               itemCount: _filteredCourses.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(_filteredCourses[index]["name"]),
-                     trailing: ElevatedButton(
+                    title: Text(_filteredCourses[index]["name"]),
+                    trailing: ElevatedButton(
                       onPressed: () {
-                        // ดำเนินการลงทะเบียนเรียน
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('ขออภัยยังไม่สามารถใช้งานได้'),
+                          ),
+                        );
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
@@ -146,8 +151,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         'ลงทะเบียน',
                         style: TextStyle(color: Colors.white),
                       ),
-                    )
-                );
+                    ));
               },
             ),
           ),
