@@ -39,19 +39,19 @@ class _GradePage extends State<GradePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Grade Page")),
+      appBar: AppBar(title: const Text("Grade Page")),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             alignment: Alignment.center,
-            margin: EdgeInsets.only(top: 16),
-            padding: EdgeInsets.all(16),
+            margin: const EdgeInsets.only(top: 16),
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               border: Border.all(color: Colors.green),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Column(
+            child: const Column(
               children: [
                 Text(
                   "Cumulative GPA: 2.68",
@@ -74,11 +74,11 @@ class _GradePage extends State<GradePage> {
               children: [
                 Text(
                   cumulativeUnitsTerm1,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   overallGPATerm1,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -100,11 +100,11 @@ class _GradePage extends State<GradePage> {
               children: [
                 Text(
                   cumulativeUnitsTerm2,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Text(
                   overallGPATerm2,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
             ),

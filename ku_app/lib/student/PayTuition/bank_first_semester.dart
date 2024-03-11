@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ku_app/student/PayTuition/QrSecondSemester.dart';
+import 'package:ku_app/student/PayTuition/qr_first_semester.dart';
 
-class BankSecondSemester extends StatefulWidget {
-  const BankSecondSemester({super.key});
+class BankFirstSemester extends StatefulWidget {
+  const BankFirstSemester({super.key});
 
   @override
-  State<BankSecondSemester> createState() => _BankSecondSemesterState();
+  State<BankFirstSemester> createState() => _BankFirstSemesterState();
 }
 
-class _BankSecondSemesterState extends State<BankSecondSemester> {
+class _BankFirstSemesterState extends State<BankFirstSemester> {
   bool isChecked1 = false;
   bool isChecked2 = false;
   bool isChecked3 = false;
@@ -20,8 +20,9 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
         child: Column(
           children: [
             const SizedBox(height: 40),
+            const SizedBox(height: 10),
             const Text(
-              'ชำระค่าเทอมกลาง',
+              'ชำระค่าเทอมปลายภาค',
               style: TextStyle(
                 color: Color.fromARGB(255, 14, 14, 14),
                 fontSize: 24,
@@ -216,7 +217,7 @@ class _BankSecondSemesterState extends State<BankSecondSemester> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const QrSecondSemester()),
+                            builder: (context) => const QrFirstSemester()),
                       );
                     } else {
                       showDialog(

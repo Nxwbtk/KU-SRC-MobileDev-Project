@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ku_app/student/PayTuition/PayTuitionSecond.dart';
+import 'package:ku_app/student/PayTuition/pay_tuition_second.dart';
 
 class InformationPage extends StatefulWidget {
   const InformationPage({super.key});
