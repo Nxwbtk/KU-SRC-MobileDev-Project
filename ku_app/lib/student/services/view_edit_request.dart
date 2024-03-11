@@ -18,7 +18,6 @@ class _ViewEditRequestPageState extends State<ViewEditRequestPage> {
         TextEditingController(text: data['detail']);
     CollectionReference requestCollection =
         FirebaseFirestore.instance.collection('std_request');
-    print(data.id);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -40,6 +39,7 @@ class _ViewEditRequestPageState extends State<ViewEditRequestPage> {
                       labelText: "หัวข้อ",
                       border: OutlineInputBorder(),
                     ),
+                    readOnly: data['status'] != 0,
                   ),
                   const SizedBox(
                     height: 20,
@@ -51,57 +51,62 @@ class _ViewEditRequestPageState extends State<ViewEditRequestPage> {
                       labelText: "รายละเอียด",
                       border: OutlineInputBorder(),
                     ),
+                    readOnly: data['status'] != 0,
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                    onPressed: () async {
-                      try {
-                        await requestCollection.doc(data.id).update({
-                          'topic': topicController.text,
-                          'detail': detailController.text,
-                        });
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: const Text("แก้ไขคำร้องขอสำเร็จ"),
-                                content: const Text(
-                                    "คำร้องขอของคุณได้รับการแก้ไขเรียบร้อยแล้ว"),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                      Navigator.pop(context);
-                                    },
-                                    child: const Text("ปิด"),
-                                  ),
-                                ],
-                              );
-                            });
-                      } catch (e) {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                title: const Text("เกิดข้อผิดพลาด"),
-                                content:
-                                    const Text("ไม่สามารถแก้ไขคำร้องขอได้"),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: const Text("ปิด"),
-                                  ),
-                                ],
-                              );
-                            });
-                      }
-                    },
-                    child: const Text("แก้ไขคำร้องขอ"),
-                  ),
+                  data['status'] == 0
+                      ? ElevatedButton(
+                          onPressed: () async {
+                            try {
+                              await requestCollection.doc(data.id).update({
+                                'topic': topicController.text,
+                                'detail': detailController.text,
+                              });
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title: const Text("แก้ไขคำร้องขอสำเร็จ"),
+                                      content: const Text(
+                                          "คำร้องขอของคุณได้รับการแก้ไขเรียบร้อยแล้ว"),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text("ปิด"),
+                                        ),
+                                      ],
+                                    );
+                                  });
+                            } catch (e) {
+                              showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title: const Text("เกิดข้อผิดพลาด"),
+                                      content: const Text(
+                                          "ไม่สามารถแก้ไขคำร้องขอได้"),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text("ปิด"),
+                                        ),
+                                      ],
+                                    );
+                                  });
+                            }
+                          },
+                          child: const Text("แก้ไขคำร้องขอ"),
+                        )
+                      : data['status'] == -1
+                          ? const Text("คำร้องขอถูกปฏิเสธ")
+                          : const Text("คำร้องขอได้รับการอนุมัติแล้ว"),
                 ],
               ),
             ),
