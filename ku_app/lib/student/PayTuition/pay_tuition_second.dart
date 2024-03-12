@@ -3,7 +3,6 @@ import 'package:intl/intl.dart';
 import 'package:ku_app/student/PayTuition/bank_second_semester.dart';
 import 'package:ku_app/student/PayTuition/pay_tuition_first.dart';
 import 'package:ku_app/student/PayTuition/information.dart';
-import 'package:ku_app/student/stdhomepage.dart';
 
 class PayTuitionSecond extends StatefulWidget {
   const PayTuitionSecond({super.key});
@@ -16,19 +15,6 @@ class PayTuitionSecondState extends State<PayTuitionSecond> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Nisit KU V.2'),
-        backgroundColor: Colors.green[800],
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const StdHomePage()),
-            );
-          },
-        ),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [

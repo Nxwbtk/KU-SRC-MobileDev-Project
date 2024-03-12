@@ -12,19 +12,6 @@ class _InformationPageState extends State<InformationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Nisit KU V.2'),
-        backgroundColor: Colors.green[800],
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const PayTuitionSecond()),
-            );
-          },
-        ),
-      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
