@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ku_app/main.dart';
+import 'package:ku_app/student/PayTuition/bank_first_semester.dart';
 
 class QrSecondSemester extends StatefulWidget {
   const QrSecondSemester({super.key});
@@ -12,6 +13,20 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Nisit KU V.2'),
+        backgroundColor: Colors.green[800],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const BankFirstSemester()),
+            );
+          },
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -116,7 +131,8 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) => const MyApp()),
+                                              builder: (context) =>
+                                                  const MyApp()),
                                         );
                                       },
                                       child: const Text('ยืนยัน'),

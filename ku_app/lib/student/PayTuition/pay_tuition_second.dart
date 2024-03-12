@@ -3,18 +3,32 @@ import 'package:intl/intl.dart';
 import 'package:ku_app/student/PayTuition/bank_second_semester.dart';
 import 'package:ku_app/student/PayTuition/pay_tuition_first.dart';
 import 'package:ku_app/student/PayTuition/information.dart';
+import 'package:ku_app/student/homepage.dart';
 
 class PayTuitionSecond extends StatefulWidget {
   const PayTuitionSecond({super.key});
 
   @override
-  State<PayTuitionSecond> createState() => _PayTuitionSecondState();
+  State<PayTuitionSecond> createState() => PayTuitionSecondState();
 }
 
-class _PayTuitionSecondState extends State<PayTuitionSecond> {
+class PayTuitionSecondState extends State<PayTuitionSecond> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Nisit KU V.2'),
+        backgroundColor: Colors.green[800],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const HomePage()),
+            );
+          },
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -347,27 +361,34 @@ class _PayTuitionSecondState extends State<PayTuitionSecond> {
 }
 
 class DropdownExample extends StatefulWidget {
-  const DropdownExample({super.key});
+  const DropdownExample({Key? key}) : super(key: key);
 
   @override
   State<DropdownExample> createState() => _DropdownExampleState();
 }
 
-class _DropdownExampleState extends State<DropdownExample> {
-  String selectedRegion = 'ภาคต้น';
+String selectedRegion = 'ภาคต้น';
 
+class _DropdownExampleState extends State<DropdownExample> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
       value: selectedRegion,
       onChanged: (String? newValue) {
         setState(() {
-          selectedRegion = newValue!;
-
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const PayTuitionFirst()),
-          );
+          if (newValue == 'ภาคต้น') {
+            selectedRegion = 'ภาคต้น';
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const PayTuitionSecond()),
+            );
+          } else if (newValue == 'ภาคปลาย') {
+            selectedRegion = 'ภาคปลาย';
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const PayTuitionFirst()),
+            );
+          }
         });
       },
       dropdownColor: const Color.fromARGB(255, 248, 249, 249),
@@ -380,7 +401,7 @@ class _DropdownExampleState extends State<DropdownExample> {
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.green[800],
+              color: value == 'ภาคต้น' ? Colors.green[800] : Colors.green[800],
             ),
             child: Text(
               value,

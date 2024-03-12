@@ -15,6 +15,19 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Nisit KU V.2'),
+        backgroundColor: Colors.green[800],
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PayTuitionSecond()),
+            );
+          },
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -41,7 +54,7 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
                         ),
                       ),
                       const SizedBox(width: 10),
-                      const DropdownExample2(),
+                      const DropdownExample(),
                     ],
                   ),
                   const SizedBox(height: 20),
@@ -339,53 +352,6 @@ class _PayTuitionFirstState extends State<PayTuitionFirst> {
         ),
       ),
       backgroundColor: const Color.fromARGB(255, 241, 240, 240),
-    );
-  }
-}
-
-class DropdownExample2 extends StatefulWidget {
-  const DropdownExample2({super.key});
-
-  @override
-  State<DropdownExample2> createState() => _DropdownExampleState2();
-}
-
-class _DropdownExampleState2 extends State<DropdownExample2> {
-  String selectedRegion = 'ภาคปลาย';
-
-  @override
-  Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      value: selectedRegion,
-      onChanged: (String? newValue) {
-        setState(() {
-          selectedRegion = newValue!;
-
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const PayTuitionSecond()),
-          );
-        });
-      },
-      dropdownColor: const Color.fromARGB(255, 248, 249, 249),
-      style: const TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
-      items: <String>['ภาคต้น', 'ภาคปลาย']
-          .map<DropdownMenuItem<String>>((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color:  Colors.green[800],
-            ),
-            child: Text(
-              value,
-              style: const TextStyle(color: Color.fromARGB(255, 251, 250, 250)),
-            ),
-          ),
-        );
-      }).toList(),
     );
   }
 }

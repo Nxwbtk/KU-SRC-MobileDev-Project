@@ -1,35 +1,51 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ku_app",
+      "cwd": "ku_app",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "ku_app (profile mode)",
+      "cwd": "ku_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "ku_app (release mode)",
+      "cwd": "ku_app",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "Flutter (lib/student/check_role_page.dart)",
+      "type": "dart",
+      "request": "launch",
+      "cwd": "ku_app",
+      "program": "lib/student/check_role_page.dart"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/ninsu/Documents/GitHub/KU-SRC-MobileDev-Project/ku_app/linux",
+      "program": "c:/Users/ninsu/Documents/GitHub/KU-SRC-MobileDev-Project/ku_app/linux/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
         {
-            "name": "ku_app",
-            "cwd": "ku_app",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "ku_app (profile mode)",
-            "cwd": "ku_app",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "ku_app (release mode)",
-            "cwd": "ku_app",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-        {
-            "name": "Flutter (lib/student/check_role_page.dart)",
-            "type": "dart",
-            "request": "launch",
-            "cwd": "ku_app",
-            "program": "lib/student/check_role_page.dart"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ]
+    }
+  ]
 }
