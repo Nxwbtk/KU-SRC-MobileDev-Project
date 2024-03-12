@@ -25,10 +25,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Nisit KU V.2'),
-        backgroundColor: Colors.green[800],
-      ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +93,9 @@ class _HomePageState extends State<HomePage> {
                         if (snapshot.hasData) {
                           return ListView.builder(
                               shrinkWrap: true,
-                              itemCount: snapshot.data!.docs.length < 10 ? snapshot.data!.docs.length : 10,
+                              itemCount: snapshot.data!.docs.length < 10
+                                  ? snapshot.data!.docs.length
+                                  : 10,
                               itemBuilder: (context, index) {
                                 DocumentSnapshot data =
                                     snapshot.data!.docs[index];
@@ -108,7 +106,13 @@ class _HomePageState extends State<HomePage> {
                                             fontWeight: FontWeight.bold)),
                                     subtitle: Text(data['detail']),
                                     onTap: () {
-                                      Navigator.push(context, MaterialPageRoute(builder: (context) => const ViewBlogPage(), settings: RouteSettings(arguments: data)));
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const ViewBlogPage(),
+                                              settings: RouteSettings(
+                                                  arguments: data)));
                                     },
                                   ),
                                 );

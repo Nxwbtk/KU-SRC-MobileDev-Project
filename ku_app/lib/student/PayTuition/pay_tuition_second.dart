@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:ku_app/student/PayTuition/bank_second_semester.dart';
 import 'package:ku_app/student/PayTuition/pay_tuition_first.dart';
 import 'package:ku_app/student/PayTuition/information.dart';
-import 'package:ku_app/student/homepage.dart';
+import 'package:ku_app/student/stdhomepage.dart';
 
 class PayTuitionSecond extends StatefulWidget {
   const PayTuitionSecond({super.key});
@@ -24,7 +24,7 @@ class PayTuitionSecondState extends State<PayTuitionSecond> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const HomePage()),
+              MaterialPageRoute(builder: (context) => const StdHomePage()),
             );
           },
         ),
