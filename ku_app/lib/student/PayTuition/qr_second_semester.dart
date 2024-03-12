@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ku_app/main.dart';
 import 'package:ku_app/student/PayTuition/bank_first_semester.dart';
+import 'package:ku_app/student/homepage.dart';
 
 class QrSecondSemester extends StatefulWidget {
   const QrSecondSemester({super.key});
@@ -132,7 +132,7 @@ class _QrSecondSemesterState extends State<QrSecondSemester> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const MyApp()),
+                                                  const HomePage()),
                                         );
                                       },
                                       child: const Text('ยืนยัน'),
