@@ -12,9 +12,14 @@ class _PlanState extends State<PlanPage> {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        const Text(
-          'แผนการเรียน',
-          style: TextStyle(fontSize: 30, color: Colors.black),
+        const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'แผนการเรียน',
+              style: TextStyle(fontSize: 30, color: Colors.black),
+            ),
+          ],
         ),
         Image.asset(
           'lib/assets/imgs/1.png',
